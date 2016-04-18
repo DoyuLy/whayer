@@ -1,0 +1,4 @@
+﻿
+
+.reveal-animation.ng-enter { transition: 1s linear all; opacity: 0; }
+.reveal-animation.ng-enter.ng-enter-active { opacity: 1; }
