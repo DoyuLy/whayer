@@ -46,7 +46,7 @@
         }
     }
 
-    Whayer.jsonp=function(url, data, successFn, errorFn)
+    Whayer.jsonp = function(url, data, successFn, errorFn)
     {
         $.ajax(
             {
@@ -67,7 +67,7 @@
             });
     }
 
-    Whayer.json=function(url, data, successFn, errorFn)
+    Whayer.json = function(url, data, successFn, errorFn)
     {
         $.ajax(
             {
@@ -86,7 +86,7 @@
             });
     }
 
-    Whayer.ajax=function(url, data, type, successFn, errorFn, async)
+    Whayer.ajax = function(url, data, type, successFn, errorFn, async)
     {
         if (async == undefined) {
             async = true;
@@ -185,7 +185,7 @@
     /**
      * 日期格式化函数
      */
-    Whayer.formatDate=function(value, format)
+    Whayer.formatDate = function(value, format)
     {
       if (value == null)
       {
@@ -270,7 +270,7 @@
 	 * @param name
 	 * @returns
 	 */
-    Whayer.getParameter=function(name)
+    Whayer.getParameter = function(name)
     {
       var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); // 构造一个含有目标参数的正则表达式对象
       var r = window.location.search.substr(1).match(reg); // 匹配目标参数

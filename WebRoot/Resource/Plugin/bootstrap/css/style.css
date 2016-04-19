@@ -1,0 +1,11 @@
+* { font-size:12px}
+a.red { color:#FF3333; text-decoration:underline}
+a.red:hover { color:#FF9999; text-decoration:none}
+a.yellow { color:#EBD852; text-decoration:underline}
+a.yellow:hover { color:#EAE366; text-decoration:none}
+a.blue { color:#0066CC; text-decoration:underline}
+a.blue:hover { color:#00CCFF; text-decoration:none}
+a.green { color:#009933; text-decoration:underline}
+a.green:hover { color:#33FFCC; text-decoration:none}
+#title { width:500px; height:30px; line-height:30px}
+#warptest { width:480px; height:100px; background:#f7f7f7; border:1px solid #d3d3d3; padding:10px; color:#666}
