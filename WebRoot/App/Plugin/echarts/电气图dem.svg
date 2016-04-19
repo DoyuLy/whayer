@@ -1,0 +1,237 @@
+<?xml version="1.0" standalone="no"?>
+<svg id="svgmap" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke-linecap="round" stroke-linejoin="round" fill-rule="evenodd" xml:space="preserve" >
+<defs >
+<clipPath id="clipId0" >
+<path d="M0,600 800,600 800,0 0,0 z" />
+</clipPath>
+<font id="txt" >
+<font-face font-family="txt.shx" />
+<glyph unicode="~" d="M0,3 1,4 3,3 4,4 " horiz-adv-x="6" vert-adv-y="6" />
+<glyph unicode="2" d="M0,5 1,6 3,6 4,5 4,4 3,3 1,3 0,2 0,0 4,0 " horiz-adv-x="6" vert-adv-y="9" />
+<glyph unicode="0" d="M1,0 0,1 0,5 1,6 2,6 3,5 3,1 2,0 1,0 " horiz-adv-x="5" vert-adv-y="9" />
+<glyph unicode="&#36755;" d="M0,5 1,6 2,6 3,5 3,4 2,3 2,2 M2,1 2,0 " horiz-adv-x="5" vert-adv-y="9" />
+<glyph unicode="&#20837;" d="M0,5 1,6 2,6 3,5 3,4 2,3 2,2 M2,1 2,0 " horiz-adv-x="5" vert-adv-y="9" />
+<glyph unicode="&#36127;" d="M0,5 1,6 2,6 3,5 3,4 2,3 2,2 M2,1 2,0 " horiz-adv-x="5" vert-adv-y="9" />
+<glyph unicode="&#36733;" d="M0,5 1,6 2,6 3,5 3,4 2,3 2,2 M2,1 2,0 " horiz-adv-x="5" vert-adv-y="9" />
+<glyph unicode="1" d="M0,5 1,6 1,0 M0,0 2,0 " horiz-adv-x="4" vert-adv-y="9" />
+<glyph unicode="3" d="M0,5 1,6 3,6 4,5 4,4 3,3 2,3 M3,3 4,2 4,1 3,0 1,0 0,1 " horiz-adv-x="6" vert-adv-y="9" />
+<glyph unicode="4" d="M4,2 0,2 3,6 3,0 " horiz-adv-x="6" vert-adv-y="9" />
+<glyph unicode="K" d="M0,0 0,6 M4,6 1,3 0,3 M1,3 4,0 " horiz-adv-x="6" vert-adv-y="9" />
+<glyph unicode="M" d="M0,0 0,6 2,2 4,6 4,0 " horiz-adv-x="6" vert-adv-y="9" />
+<glyph unicode="F" d="M0,0 0,6 4,6 M0,3 2,3 " horiz-adv-x="6" vert-adv-y="9" />
+</font>
+</defs>
+<g stroke-width="0.1" clip-path="url(#clipId0)" fill="none" stroke="rgb(0,0,0)" />
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="rgb(0,0,255)" stroke="none" >
+<path d="M282.799,460.788 281.064,460.788 281.016,156.906 282.751,156.906 z" />
+</g>
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="none" stroke="rgb(0,0,255)" >
+<polyline points="32.2711,310.15 43.3357,315.142 " />
+<polyline points="43.3357,315.142 43.3357,304.941 " />
+<polyline points="43.3357,304.941 32.922,310.15 " />
+</g>
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="rgb(0,0,255)" stroke="none" >
+<path d="M123.602,309.608 123.602,310.475 43.3357,310.475 43.3357,309.608 z" />
+<path d="M281.906,309.38 281.906,310.247 191.685,310.247 191.685,309.38 z" />
+</g>
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="none" stroke="rgb(0,0,255)" >
+<polyline points="154.951,377.244 144.953,377.244 144.872,356.259 154.854,356.259 154.951,377.244 " />
+<polyline points="143.19,383.887 157.067,383.887 " />
+<polyline points="145.966,387.356 154.291,387.356 " />
+<polyline points="148.741,390.825 151.516,390.825 " />
+<polyline points="150.129,377.316 150.129,383.887 " />
+</g>
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="rgb(0,0,255)" stroke="none" >
+<path d="M150.034,373.512 147.236,365.513 150.034,365.513 z" />
+<path d="M150.034,373.512 150.034,365.513 152.831,365.513 z" />
+<path d="M150.562,365.511 149.695,365.512 149.68,348.092 150.548,348.092 z" />
+<path d="M149.46,309.814 150.327,309.814 150.327,335.314 149.46,335.314 z" />
+</g>
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="none" stroke="rgb(0,0,255)" >
+<polyline points="221.377,377.244 211.379,377.244 211.298,356.259 221.28,356.259 221.377,377.244 " />
+<polyline points="209.616,383.887 223.493,383.887 " />
+<polyline points="212.392,387.356 220.718,387.356 " />
+<polyline points="215.167,390.825 217.942,390.825 " />
+<polyline points="216.555,377.316 216.555,383.887 " />
+</g>
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="rgb(0,0,255)" stroke="none" >
+<path d="M216.46,373.512 213.662,365.513 216.46,365.513 z" />
+<path d="M216.46,373.512 216.46,365.513 219.257,365.513 z" />
+</g>
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="none" stroke="rgb(0,0,255)" >
+<polyline points="216.46,373.512 219.257,365.513 " />
+</g>
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="rgb(0,0,255)" stroke="none" >
+<path d="M216.988,365.511 216.121,365.512 216.106,348.092 216.974,348.091 z" />
+<path d="M215.886,309.814 216.754,309.814 216.754,335.314 215.886,335.314 z" />
+</g>
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="none" stroke="rgb(0,0,255)" >
+<polyline points="168.398,301.342 191.685,301.342 191.685,317.672 168.398,317.672 168.398,301.342 " />
+<polyline points="168.398,317.672 191.685,301.342 " />
+<polyline points="179.166,312.898 186.873,312.898 " />
+<path d="M181.203,304.595  A2.62134,2.62134 0 0,0 176.079,304.595 " />
+<path d="M170.956,304.595  A2.62134,2.62134 0 0,0 176.079,304.595 " />
+<polyline points="455.627,395.755 444.562,400.747 " />
+<polyline points="444.562,400.747 444.562,390.546 " />
+<polyline points="444.562,390.546 454.976,395.755 " />
+</g>
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="rgb(0,0,255)" stroke="none" >
+<path d="M364.296,396.08 364.296,395.213 444.562,395.213 444.562,396.08 z" />
+<path d="M351.282,395.456 351.282,396.323 322.979,396.324 322.979,395.456 z" />
+<path d="M310.222,395.524 310.222,396.392 281.919,396.392 281.919,395.525 z" />
+</g>
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="none" stroke="rgb(0,0,255)" >
+<polyline points="455.634,439.433 444.569,444.425 " />
+<polyline points="444.569,444.425 444.569,434.224 " />
+<polyline points="444.569,434.224 454.983,439.433 " />
+</g>
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="rgb(0,0,255)" stroke="none" >
+<path d="M364.303,439.758 364.303,438.891 444.569,438.891 444.569,439.758 z" />
+<path d="M351.289,439.134 351.289,440.002 322.985,440.002 322.985,439.135 z" />
+<path d="M310.229,439.203 310.229,440.07 281.926,440.07 281.926,439.203 z" />
+</g>
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="none" stroke="rgb(0,0,255)" >
+<polyline points="455.621,351.439 444.556,356.431 " />
+<polyline points="444.556,356.431 444.556,346.23 " />
+<polyline points="444.556,346.23 454.97,351.439 " />
+</g>
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="rgb(0,0,255)" stroke="none" >
+<path d="M364.29,351.764 364.29,350.897 444.556,350.897 444.556,351.764 z" />
+<path d="M351.275,351.14 351.275,352.008 322.972,352.008 322.972,351.141 z" />
+<path d="M310.216,351.209 310.216,352.076 281.913,352.076 281.913,351.209 z" />
+</g>
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="none" stroke="rgb(0,0,255)" >
+<polyline points="455.614,309.61 444.549,314.602 " />
+<polyline points="444.549,314.602 444.549,304.401 " />
+<polyline points="444.549,304.401 454.963,309.61 " />
+</g>
+<g stroke-width="0.25" clip-path="url(#clipId0)" fill="rgb(0,0,255)" stroke="none" >
+<path d="M364.283,309.935 364.283,309.068 444.549,309.068 444.549,309.935 z" />
+<path d="M351.268,309.311 351.268,310.179 322.965,310.179 322.965,309.312 z" />
+<path d="M310.209,309.38 310.209,310.247 281.906,310.247 281.906,309.38 z" />
+<path d="M351.251,219.348 351.251,220.215 322.948,220.215 322.948,219.348 z" />
+<path d="M310.192,219.416 310.192,220.283 281.889,220.283 281.889,219.416 z" />
+<path d="M351.685,159.684 350.818,158.817 376.727,158.817 375.859,159.684 z" />
+<path d="M375.859,159.684 376.727,158.817 376.727,258.852 375.859,257.985 z" />
+<path d="M375.859,257.985 376.727,258.852 350.818,258.852 351.685,257.985 z" />
+<path d="M351.685,257.985 350.818,258.852 350.818,158.817 351.685,159.684 z" />
+<path d="M417.611,164.322 417.611,163.454 497.877,163.455 497.877,164.322 z" />
+<path d="M404.596,163.698 404.596,164.565 376.293,164.566 376.293,163.698 z" />
+<path d="M431.282,171.738 431.282,156.83 457.009,171.738 z" />
+<path d="M457.009,171.738 431.282,156.83 457.009,156.83 z" />
+<path d="M417.611,190.834 417.611,189.967 497.877,189.967 497.877,190.834 z" />
+<path d="M404.596,190.211 404.596,191.078 376.293,191.078 376.293,190.211 z" />
+<path d="M431.282,198.25 431.282,183.342 457.009,198.25 z" />
+<path d="M457.009,198.25 431.282,183.342 457.009,183.342 z" />
+<path d="M417.611,219.188 417.611,218.321 497.877,218.321 497.877,219.188 z" />
+<path d="M404.596,218.565 404.596,219.432 376.293,219.432 376.293,218.565 z" />
+<path d="M431.282,226.604 431.282,211.696 457.009,226.604 z" />
+<path d="M457.009,226.604 431.282,211.696 457.009,211.696 z" />
+<path d="M417.611,247.982 417.611,247.115 497.877,247.115 497.877,247.983 z" />
+<path d="M404.596,247.359 404.596,248.226 376.293,248.226 376.293,247.359 z" />
+<path d="M431.282,255.398 431.282,240.491 457.009,255.398 z" />
+<path d="M457.009,255.398 431.282,240.491 457.009,240.491 z" />
+<path d="M498.744,269.731 497.01,269.731 496.962,130.771 498.696,130.77 z" />
+<path d="M168.394,309.38 168.401,310.247 149.897,310.387 149.891,309.52 z" />
+<path d="M282.799,460.788 281.064,460.788 281.016,135.852 282.751,135.852 z" />
+</g>
+<g stroke-width="0.05" clip-path="url(#clipId0)" fill="none" stroke="rgb(0,0,0)" >
+<text transform="matrix(9.39545 0 -0 9.39545 39.5162 299.349)" font-size="1.33333" style="font-family: txt" >~220&#36755;&#20837;</text>
+<text transform="matrix(9.39545 0 -0 9.39545 468.489 310.517)" font-size="1.33333" style="font-family: txt" >&#36127;&#36733;1</text>
+<text transform="matrix(9.39545 0 -0 9.39545 468.537 355.878)" font-size="1.33333" style="font-family: txt" >&#36127;&#36733;2</text>
+<text transform="matrix(9.39545 0 -0 9.39545 466.76 397.563)" font-size="1.33333" style="font-family: txt" >&#36127;&#36733;3</text>
+<text transform="matrix(9.39545 0 -0 9.39545 467.724 441.664)" font-size="1.33333" style="font-family: txt" >&#36127;&#36733;4</text>
+<text transform="matrix(9.39545 0 -0 9.39545 405.594 156.763)" font-size="1.33333" style="font-family: txt" >KM1</text>
+<text transform="matrix(9.39545 0 -0 9.39545 438.348 156.68)" font-size="1.33333" style="font-family: txt" >FM1</text>
+<text transform="matrix(9.39545 0 -0 9.39545 406.329 182.897)" font-size="1.33333" style="font-family: txt" >KM2</text>
+<text transform="matrix(9.39545 0 -0 9.39545 439.083 182.814)" font-size="1.33333" style="font-family: txt" >FM2</text>
+<text transform="matrix(9.39545 0 -0 9.39545 408.253 209.573)" font-size="1.33333" style="font-family: txt" >KM3</text>
+<text transform="matrix(9.39545 0 -0 9.39545 441.007 209.49)" font-size="1.33333" style="font-family: txt" >FM3</text>
+<text transform="matrix(9.39545 0 -0 9.39545 407.63 237.66)" font-size="1.33333" style="font-family: txt" >KM4</text>
+<text transform="matrix(9.39545 0 -0 9.39545 440.384 237.577)" font-size="1.33333" style="font-family: txt" >FM4</text>
+<text transform="matrix(9.39545 0 -0 9.39545 350.227 298.757)" font-size="1.33333" style="font-family: txt" >KM1</text>
+<text transform="matrix(9.39545 0 -0 9.39545 354.309 341.445)" font-size="1.33333" style="font-family: txt" >KM2</text>
+<text transform="matrix(9.39545 0 -0 9.39545 354.315 385.761)" font-size="1.33333" style="font-family: txt" >KM3</text>
+<text transform="matrix(9.39545 0 -0 9.39545 354.322 429.439)" font-size="1.33333" style="font-family: txt" >KM4</text>
+</g>
+<g stroke-width="1.5" clip-path="url(#clipId0)" fill="none" stroke="rgb(0,0,255)" >
+<polyline points="123.602,292.938 149.894,309.953 " id="INKM1" onclick="lineclick(evt)"/>
+<polyline points="351.275,301.223 364.283,309.641 " id="KM1-1" onclick="lineclick(evt)"/>
+<polyline points="309.958,301.467 322.965,309.885 " id="KM1" onclick="lineclick(evt)"/>
+<polyline points="351.283,343.052 364.29,351.47 " id="KM2-1" onclick="lineclick(evt)"/>
+<polyline points="309.965,343.296 322.972,351.714 " id="KM2" onclick="lineclick(evt)"/>
+<polyline points="309.971,387.612 322.979,396.03 " id="KM3" onclick="lineclick(evt)"/>
+<polyline points="351.289,387.368 364.296,395.786 " id="KM3-1" onclick="lineclick(evt)"/>
+<polyline points="351.296,431.046 364.303,439.464 " id="KM4-1" onclick="lineclick(evt)"/>
+<polyline points="309.978,431.29 322.985,439.708 " id="KM4" onclick="lineclick(evt)"/>
+<polyline points="309.941,211.503 322.948,219.921 " id="KM5"  onclick="lineclick(evt)"/>
+<polyline points="404.603,210.476 417.611,218.894 " id="KM5-3" onclick="lineclick(evt)"/>
+<polyline points="404.603,182.122 417.611,190.54 " id="KM5-2" onclick="lineclick(evt)"/>
+<polyline points="404.603,155.61 417.611,164.028 " id="KM5-1" onclick="lineclick(evt)"/>
+<polyline points="404.603,239.27 417.611,247.689 " id="KM5-4" onclick="lineclick(evt)"/>
+  <polyline points="159.455,335.195 150.114,348.092 " id="JDKM1" onclick="lineclick(evt,1)"/>
+<polyline points="225.881,335.194 216.54,348.092 " id="JDKM2" onclick="lineclick(evt,1)"/>
+</g>
+    <script type="text/javascript">
+    <![CDATA[
+      
+ var svg= document.getElementById('svgmap');
+        function mouseover(evt) {
+            var rect = evt.target;
+            rect.currentScale = 2;
+        }
+        function mouseout(evt) {
+            var rect = evt.target;
+            rect.currentScale = 1;
+        }
+        function lineclick(evt,type){
+         // alert(evt.target);
+          var points=evt.target.points;
+          if(points.length==2){
+          var p = svg.createSVGPoint();
+          if(type==1){
+           if(points[0].x>points[1].x){
+             p.x=points[1].x;
+             p.y=points[0].y;
+            }else{
+             p.x=points[0].x;
+             p.y=points[1].y;
+            }
+             points.insertItemBefore(p,0);
+          }else{
+             if(points[0].y>points[1].y){
+             p.x=points[1].x;
+             p.y=points[0].y;
+            }else{
+             p.x=points[0].x;
+             p.y=points[1].y;
+            }
+            points.insertItemBefore(p,0);
+          }
+
+          }else{
+            points.removeItem(0);
+          }
+
+          
+        }
+        function updatavalue(evt){
+         var rect = evt.target;
+         
+        }
+        function textclick(evt){
+          var rect = evt.target;
+          alert(evt.target.nodeType+" "+evt.target.nodeName);
+        }
+        clearInterval(timeTicket);
+         
+        var timeTicket = setInterval(function () {
+            axisData = (new Date()).toLocaleTimeString();
+          // var txt= document.getElementById( "T1");
+           // txt.textContent = Number(200 + Math.random() * 40).toFixed(1) + "V";
+        }, 1000);
+        
+]]>
+  </script>
+</svg>
+

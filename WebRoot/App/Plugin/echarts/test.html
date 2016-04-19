@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>svg.html</title>
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="../jquery/jquery-1.12.2.min.js"></script>
+   <!-- <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../bootstrap/css/bootstrap.css"></script>-->
+</head>
+<body style="width: 100%; height: 100%;">
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <svg id="svg1" xmlns="http://www.w3.org/2000/svg" version="1.1" style="width: 100%; height: 100%;" viewBox="0 0 1000 800">
+    </svg>
+
+    <script type="text/javascript" src="snap.svg.js"></script>
+    <script type="text/javascript">
+
+        var s = Snap("#svg1");
+        var f = s.paper.filter(Snap.filter.shadow(0, 2, 3));
+
+        function mouseover(evt) {
+            var rect = evt.target;
+            rect.currentScale = 1.2;
+        }
+        function mouseout(evt) {
+            var rect = evt.target;
+            rect.currentScale = 1;
+            rect.filter = null;
+        }
+
+        function addEvent(e) {
+            e.hover(mouseover, mouseout);
+            e.click(function mouseover(evt) {
+                var rect = evt.target;
+                alert(rect.nodeName);
+            });
+        }
+        var line = s.line(100, 300, 900, 300).attr({
+            stroke: "#0000FF",
+            strokeWidth: 3,
+            title: "母线"
+        });
+        addEvent(line);
+
+
+        var line1 = s.line(400, 100, 400, 300).attr({
+            stroke: "#FF0000",
+            strokeWidth: 3
+        })
+        addEvent(line1);
+
+        var line2 = s.line(500, 300, 500, 500).attr({
+            stroke: "#00FF00",
+            strokeWidth: 3
+        })
+        addEvent(line2);
+        var line3 = s.line(700, 300, 700, 500).attr({
+            stroke: "#00FF00",
+            strokeWidth: 3
+        })
+        addEvent(line3);
+        var line4 = s.line(300, 300, 300, 500).attr({
+            stroke: "#00FF00",
+            strokeWidth: 3
+        })
+        addEvent(line4);
+
+        var t1 = s.text(90, 290, "母线").attr({
+            stroke: "#0000FF"
+        });
+        var t2 = s.text(410, 200, "进线").attr({
+            stroke: "#FF0000"
+        });
+        var t3 = s.text(510, 400, "出线2").attr({
+            stroke: "#00FF00"
+        });
+        var t4 = s.text(710, 400, "出线3").attr({
+            stroke: "#00FF00"
+        });
+        var t5 = s.text(310, 400, "出线1").attr({
+            stroke: "#00FF00"
+        });
+        addEvent(t1);
+        addEvent(t2);
+        addEvent(t3);
+        addEvent(t4);
+        addEvent(t5);
+
+        var t6 = s.text(310, 350, "开").attr({
+            stroke: "#00FF00"
+        }).click(click);
+
+        //单击事件
+        function click(evt) {
+            var item = evt.target
+            Snap.ajax("./pie.json", function (response) {
+                if (item.textContent == "开") {
+                    item.textContent = "关"
+                } else {
+                    item.textContent = "开"
+                }
+
+            });
+        }
+
+        var t7 = s.text(40, 250, (new Date()).toLocaleTimeString()).attr({
+            stroke: "#FF0000"
+        });
+        //
+        clearInterval(timeTicket);
+        var timeTicket = setInterval(function () {
+            axisData = (new Date()).toLocaleTimeString();
+            t7.node.textContent = axisData;
+            t8.node.textContent = Number(200 + Math.random() * 40).toFixed(1) + "V";
+        }, 1000);
+
+        var t8 = s.text(820, 250, "225.0V").attr({
+            stroke: "#f00"
+        });
+
+        var p1 = s.path("M480,480H600V600H480V480");
+        p1.attr({
+            fill: "#bada55",
+            stroke: "#000",
+            strokeWidth: 5
+        }).hover(function() {
+            // 移入
+            this.animate({
+                fill: "#00f"    // 蓝色
+            }, 1000);	
+        }, function() {
+            // 移出
+            this.animate({
+                fill: "#f00"    // 红色
+            }, 1000);	
+        });
+        addEvent(p1);
+        var image = s.image("./images/1.png", 400, 400, 50, 50).click(click);
+    </script>
+</body>
+</html>
