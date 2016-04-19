@@ -1,20 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
-    <script type="text/javascript" src="Resource/plugin/jquery.js"></script>
-    <script type="text/javascript" src="Resource/plugin/handlebars-1.0.0.beta.6.js"></script>
-    <script id="table-template" type="text/x-handlebars-template">
-        <span>{{account}}，欢迎您| <a href="/user/logout">登出</a></span>
-    </script>
+    <title>华雁智能运维云</title>
+    <link rel="stylesheet" type="text/css" href="./resource/style/main.css">
+    <link rel="stylesheet" type="text/css" href="./resource/style/bootstrap/css/bootstrap.min.css">
 </head>
-<body>
-    <div class="header"><span>请登录</span></div>
-    <div class="content">
-        <div class="left_bar"></div>
-        <div class="content"></div>
+<body style="background: url('./resource/image/common/body-bg.png') repeat 0 0;">
+<div class="loading" style="/* display: none; */">
+    <img src="./resource/image/common/loader4.GIF">
+</div>
+<div class="navbar loginHeader">
+    <div id="login-logo">
+        <a><img src="./resource/image/common/banner-logo.png"></a>
     </div>
-    <div class="footer"></div>
+</div>
+<div class="login_container">
+    <div id="login-header">
+        <h3>Login</h3>
+    </div>
+    <div id="login-content" class="clearfix">
+        <div  class="form-group">
+            <div class="input-group">
+					<span id="bg_user" class="input-group-addon bg_user">
+						<i class="glyphicon glyphicon-user"></i>
+					</span>
+                <input type="text" class="form-control" id="username">
+            </div>
+        </div>
+        <div  class="form-group">
+            <div class="input-group">
+					<span id="bg_pwd" class="input-group-addon bg_pwd">
+						<i class="glyphicon glyphicon-lock"></i>
+					</span>
+                <input type="password" class="form-control" id="password">
+            </div>
+        </div>
+
+        <div id="remember-me" class="pull-left">
+            <input type="checkbox" name="remember" id="remember">
+            <label id="remember-label" for="remember">记住我</label>
+        </div>
+
+        <div class="pull-right">
+            <button type="button" class="btn btn-success btn-large" id="btnLogin">
+                Login
+            </button>
+        </div>
+    </div>
+</div>
+<!--<script data-main="js/main.js" src="js/libs/require.js" defer async="true"></script>-->
+<script type="text/javascript" src="./resource/plugin/jquery-1.12.2.js"></script>
+<script type="text/javascript" src="./resource/plugin/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./resource/style/fontawesome/css/font-awesome.css">
+<script type="text/javascript" src="./resource/plugin/layer2.2/layer.js"></script>
+
+<script type="text/javascript">
+    $(window).load(function(){
+        $(".loading").remove();
+    });
+    $(function(){
+        function validateLogin(username, password){
+            var msg = '';
+            if(!username) msg = '请输入账号';
+            if(!password) msg = '请输入密码';
+            if(msg) {
+                alert(msg);
+                return false;
+            }
+            return true;
+        }
+        $("#btnLogin").on("click",function(){
+            var username = $('#username').val().trim();
+            var password = $('#password').val().trim();
+
+            if(validateLogin(username, password)){
+                $.ajax({
+                    url: '/user/login',
+                    type: 'POST',
+                    data: {account: username, pwd: password},
+                    success: function(data){
+                        if(data && data.result)
+                            location.href="/pages/index.html";
+                        else alert(data.msg);
+                    }
+                })
+            };
+
+        });
+    })
+</script>
 </body>
 </html>

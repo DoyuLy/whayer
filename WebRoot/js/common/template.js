@@ -1,10 +1,10 @@
 /**
  * Created by duyu on 2016/4/19.
  */
-define([], function(){
+define(['text'], function(){
     var template = {
         baseUrl: '/view',
-        templates: [],
+        templates: { },
         load: function(name, callback){
             var _this = this;
             if(this.templates[name] != undefined){
