@@ -19,7 +19,7 @@ var login = {
             var account = $('#account').val().trim();
             var psw = $('#psw').val().trim();
 
-            utils.ajax('/user/login', {account: account, psw: psw}, function(data){
+            Whayer.ajax('/user/login', {account: account, psw: psw}, function(data){
                 //返回对象可以在controller统一处理, 比如:
                 //{
                 //    "httpCode": 200

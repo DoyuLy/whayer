@@ -16,6 +16,8 @@ define(['jquery', 'director'], function($){
         init: function(){
             var router = Router(this.routes);
             router.init();
+
+
         },
         login: function(){
 
@@ -35,7 +37,7 @@ define(['jquery', 'director'], function($){
         config: function(){
 
         }
-    }
+    };
 
     return app;
 });

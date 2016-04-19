@@ -128,6 +128,38 @@
                 timeout : 10000
             });
     }
+
+    Whayer.Template = (function(){
+        var instance,
+            baseUrl = '../view',
+            templates = { };
+
+        function createInstance() {
+            var o = new Object();
+            o.templates = new Array();
+            o.load = function (name, callback) {
+                if (o.templates[name] != undefined) {
+                    callback(o.templates[name]);
+                };
+                require(['text!' + baseUrl + templates[name].url], function (content) {
+                    if(!content)  throw new ExceptionInformation('Error template name.');
+                    o.templates[name] = content;
+                    callback(o.templates[name]);
+                });
+            };
+            return o;
+        }
+
+        return {
+            singleton: function () {
+                if (!instance) {
+                    instance = createInstance();
+                }
+
+                return instance;
+            }
+        };
+    })();
     
     Whayer.Cookies =
     {  

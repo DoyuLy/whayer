@@ -16,6 +16,8 @@ require.config({
         ztree: _PLUGIN_PATH + 'ztree/jquery.ztree.all.min',
 
         director: _PLUGIN_PATH + 'director.min',
+        text: _PLUGIN_PATH + 'text',
+        css: _PLUGIN_PATH + 'css',
 
         //whayer common
         app: 'app',
@@ -32,7 +34,7 @@ require.config({
         "layer": ["jquery"],
         "ztree": ["jquery"],
 
-        "util": ["layer", "common"],
+        "util": ["jquery", "layer", "text"],
         "wsclient": ["util"]
     },
     priority: [
@@ -43,7 +45,7 @@ require.config({
 
 
 require([
-    "jquery", "app", "bootstrap", "util"
+    "jquery", "app", "text", "bootstrap", "util"
 ], function (jquery, app) {
     jquery(function () {
         //angular.bootstrap(document, ["sdApp"]);
