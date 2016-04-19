@@ -2,7 +2,7 @@
  * Created by duyu on 2016/4/19.
  */
 
-define(['jquery', 'director'], function($){
+define(['jquery', 'director'], function($, director){
     var app = {
         routes: {
             '/login': app.login,
@@ -14,7 +14,13 @@ define(['jquery', 'director'], function($){
         },
         version: '0.1.0',
         init: function(){
-            var router = Router(this.routes);
+            var router = director.Router(this.routes);
+            router.configure({
+                before: function(){
+                    //全局拦截器,验证cookie是否存在,服务端验证session是否存在(若只是cookie验证,cookie在服务端秘钥解密后进行对比)
+
+                }
+            });
             router.init();
 
 

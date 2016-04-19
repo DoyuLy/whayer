@@ -22,10 +22,11 @@ require.config({
         css: _PLUGIN_PATH + 'css',
 
         //whayer common
-        app: 'app',
-        util: _COMMON_PATH + 'util',
-        events: _COMMON_PATH + 'events',
-        wsclient: _COMMON_PATH + 'wsclient'
+        app: 'app',                              //入口函数
+        template: _COMMON_PATH + 'template',     //模板加载器
+        util: _COMMON_PATH + 'util',             //通用工具类
+        events: _COMMON_PATH + 'events',         //自定义注册事件(observer pattern )
+        wsclient: _COMMON_PATH + 'wsclient'      //web socket client
     },
     shim: {
 
@@ -47,7 +48,7 @@ require.config({
 
 
 require([
-    "jquery", "app", "text", "bootstrap", "util"
+    "jquery", "app", "text", "template", "bootstrap", "util"
 ], function (jquery, app) {
     jquery(function () {
         //初始化路由
