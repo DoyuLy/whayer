@@ -15,6 +15,7 @@ require.config({
         layer: _PLUGIN_PATH + "layer2.2/layer",
         ztree: _PLUGIN_PATH + 'ztree/jquery.ztree.all.min',
 
+        director: _PLUGIN_PATH + 'director.min',
 
         //whayer common
         app: 'app',
@@ -42,11 +43,10 @@ require.config({
 
 
 require([
-
-    "jquery", "bootstrap", "util", "app",
-], function (jquery) {
+    "jquery", "app", "bootstrap", "util"
+], function (jquery, app) {
     jquery(function () {
         //angular.bootstrap(document, ["sdApp"]);
-
+        app.init();
     });
 });
