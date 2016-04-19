@@ -3,8 +3,10 @@
  */
 
 var _PLUGIN_PATH = '../resource/plugin/';
-var _COMMON_PATH = '/common/';
+var _COMMON_PATH = './common/';
 require.config({
+    enforceDefine: false,
+    //baseUrl: '',
     paths: {
         //libs
         jquery: _PLUGIN_PATH + 'jquery-2.2.3.min',
@@ -48,7 +50,7 @@ require([
     "jquery", "app", "text", "bootstrap", "util"
 ], function (jquery, app) {
     jquery(function () {
-        //angular.bootstrap(document, ["sdApp"]);
+        //初始化路由
         app.init();
     });
 });
