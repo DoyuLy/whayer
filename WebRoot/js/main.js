@@ -16,6 +16,7 @@ require.config({
         bootstrap_datetimepicker: _PLUGIN_PATH + 'bootstrap/bootstrap-datetimepicker/bootstrap-datetimepicker.min',
         bootstrap_table_zh: _PLUGIN_PATH + 'bootstrap/bootstrap-table/local/bootstrap-table-zh-CN.min',
         bootstrap_datetimepicker_zh: _PLUGIN_PATH + 'bootstrap/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN',
+        bootstrap_combobox: _PLUGIN_PATH + 'bootstrap/bootstrap-combobox/bootstrap-combobox',
         layer: _PLUGIN_PATH + "layer2.2/layer",
         ztree: _PLUGIN_PATH + 'ztree/jquery.ztree.all.min',
         handlebars: _PLUGIN_PATH + 'handlebars/handlebars',
@@ -36,7 +37,7 @@ require.config({
     shim: {
 
         "bootstrap": ["jquery"],
-        "bootstrap_table": ["jquery", "bootstrap_table_zh"],
+        "bootstrap_table": ["jquery", "bootstrap_table_zh", "bootstrap_editable", "bootstrap_combobox", "bootstrap_datetimepicker"],
         "bootstrap_editable": ["jquery"],
         "bootstrap_datetimepicker": ["jquery", "bootstrap_datetimepicker_zh"],
         "layer": ["jquery"],

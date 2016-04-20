@@ -5,13 +5,13 @@
 define([ 'director'], function(director){
     var status = function(){
         alert('status');
-        require(['./controllers/devicestatusController'], function(deviceStatus){
+        require(['./controllers/deviceStatusController'], function(deviceStatus){
             deviceStatus.init();
         });
     };
     var manage = function(){
         alert('manage');
-        require(['deviceManage'], function(deviceManage){
+        require(['./controllers/deviceManageController'], function(deviceManage){
             deviceManage.init();
         });
     };

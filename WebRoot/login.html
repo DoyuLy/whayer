@@ -55,40 +55,5 @@
 <link rel="stylesheet" href="./resource/style/fontawesome/css/font-awesome.css">
 <script type="text/javascript" src="./resource/plugin/layer2.2/layer.js"></script>
 
-<script type="text/javascript">
-    $(window).load(function(){
-        $(".loading").remove();
-    });
-    $(function(){
-        function validateLogin(username, password){
-            var msg = '';
-            if(!username) msg = '请输入账号';
-            if(!password) msg = '请输入密码';
-            if(msg) {
-                alert(msg);
-                return false;
-            }
-            return true;
-        }
-        $("#btnLogin").on("click",function(){
-            var username = $('#username').val().trim();
-            var password = $('#password').val().trim();
-
-            /*if(validateLogin(username, password)){
-                $.ajax({
-                    url: '/user/login',
-                    type: 'POST',
-                    data: {account: username, pwd: password},
-                    success: function(data){
-                        if(data && data.result)
-                            location.href="/pages/index.html";
-                        else alert(data.msg);
-                    }
-                })
-            }*/
-            location.href = 'index.html';
-        });
-    })
-</script>
 </body>
 </html>

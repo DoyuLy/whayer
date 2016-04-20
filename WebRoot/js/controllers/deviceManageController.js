@@ -1,9 +1,8 @@
 /**
  * Created by duyu on 2016/4/20.
  */
-
-define(['jquery', 'underscore', 'template', 'handlebars'], function($, _ , template, handlebars){
-    var deviceStatus = {
+define(['jquery', 'underscore', 'template', 'handlebars', 'bootstrap', 'bootstrap_table'], function ($, _ , template, handlebars) {
+    var deviceManage = {
         init: function(){
             var _this = this;
             template.load('/status/status.html', function(content){
@@ -15,21 +14,11 @@ define(['jquery', 'underscore', 'template', 'handlebars'], function($, _ , templ
             });
         },
         attachEvent: function(){
-            var _this = this;
             require(['domReady!'], function (doc) {
-                //ToDo 注册DOM事件
 
-               $('#xxx').on('click', function(){
-
-                });
-
-                $('#xx').on('mouseover', function(){
-
-                });
-
-            });
+            })
         }
     };
 
-    return deviceStatus;
+    return deviceManage;
 });
