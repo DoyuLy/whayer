@@ -6,9 +6,9 @@ define(['jquery', 'underscore', 'template', 'handlebars'], function($, _ , templ
     var deviceStatus = {
         init: function(){
             var _this = this;
-            template.load('/status/status.html', function(content){
+            template.load('/status/status', function(content){
                 if(content != undefined){
-                    debugger;
+                    //debugger;
                     $('#content').html(handlebars.compile(content)({}));
                     _this.attachEvent();
                 }

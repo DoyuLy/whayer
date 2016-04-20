@@ -5,9 +5,9 @@ define(['jquery', 'underscore', 'template', 'handlebars', 'bootstrap', 'bootstra
     var deviceManage = {
         init: function(){
             var _this = this;
-            template.load('/status/status.html', function(content){
+            template.load('/manage/manage', function(content){
                 if(content != undefined){
-                    debugger;
+                    //debugger;
                     $('#content').html(handlebars.compile(content)({}));
                     _this.attachEvent();
                 }
@@ -15,7 +15,7 @@ define(['jquery', 'underscore', 'template', 'handlebars', 'bootstrap', 'bootstra
         },
         attachEvent: function(){
             require(['domReady!'], function (doc) {
-
+                
             })
         }
     };

@@ -4,6 +4,7 @@
 define(['text'], function(){
     var template = {
         baseUrl: '../view',
+        suffix: '.html',
         templates: { },
         load: function(name, callback){
             var _this = this;
@@ -12,7 +13,7 @@ define(['text'], function(){
                 callback(this.templates[name]);
                 return;
             }
-            require(['text!' + this.baseUrl + name], function (content) {
+            require(['text!' + this.baseUrl + name + _this.suffix], function (content) {
                 //debugger;
                 _this.templates[name] = content;
                 callback(_this.templates[name]);
