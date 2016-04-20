@@ -8,9 +8,12 @@ define(['text'], function(){
         load: function(name, callback){
             var _this = this;
             if(this.templates[name] != undefined){
+                //debugger;
                 callback(this.templates[name]);
+                return;
             }
             require(['text!' + this.baseUrl + name], function (content) {
+                //debugger;
                 _this.templates[name] = content;
                 callback(_this.templates[name]);
             });
