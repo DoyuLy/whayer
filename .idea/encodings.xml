@@ -3,8 +3,8 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/WebRoot/js/common/events.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/WebRoot/js/common/req.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/WebRoot/js/viewModel/alarm/alarm.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/WebRoot/js/viewModel/index.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/WebRoot/js/viewModel/login.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebRoot/js/controllers/alarm/alarm.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebRoot/js/controllers/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebRoot/js/controllers/loginController.js" charset="UTF-8" />
   </component>
 </project>

@@ -2,15 +2,24 @@
  * Created by duyu on 2016/4/19.
  */
 
-define(['jquery', 'director'], function($){
+define([ 'director'], function(director){
     var status = function(){
         alert('status');
+        require(['./controllers/devicestatusController'], function(deviceStatus){
+            deviceStatus.init();
+        });
     };
     var manage = function(){
         alert('manage');
+        require(['deviceManage'], function(deviceManage){
+            deviceManage.init();
+        });
     };
     var alarm = function(){
         alert('alarm');
+        require(['deviceAlarm'], function(deviceAlarm){
+            deviceAlarm.init();
+        });
     };
     var setting = function(){
         alert('setting');
