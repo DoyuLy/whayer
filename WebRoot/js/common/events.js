@@ -1,6 +1,4 @@
-/**
- * Created by czl on 2015/11/6.
- */
+
 //; (function (factory) {
 //    if (typeof exports === 'object')  module.exports = factory();
 //    else if (typeof define === 'function' && define.amd) define([], factory);

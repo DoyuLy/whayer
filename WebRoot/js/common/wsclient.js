@@ -1,4 +1,6 @@
-﻿
+﻿/**
+ * Created by duyu on 2016/4/18.
+ */
 
 var ws = function (address, clientId) {
     var self = this;

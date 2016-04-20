@@ -42,8 +42,8 @@ require.config({
         "layer": ["jquery"],
         "ztree": ["jquery"],
         "handlebars": {
-            deps: ['jquery']
-            //exports: 'handlebars'
+            deps: ['jquery'],
+            exports: 'handlebars'
         },
         "underscore": {
             exports: '_'

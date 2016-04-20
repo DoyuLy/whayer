@@ -1,4 +1,6 @@
-
+/**
+ * Created by duyu on 2016/4/18.
+ */
 
 ; (function (factory) {
     if (typeof exports === 'object') {

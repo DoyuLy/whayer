@@ -1,0 +1,93 @@
+<style>
+    .position {
+        position: relative;
+        margin: 10px;
+        border: 0;
+    }
+    .nav_position {
+        position: relative;
+        float: left;
+        /*width: 13%;*/
+        width: 18%;
+        margin-left: 10px;
+    }
+    .col-lg-12 {
+
+        margin-top: 15px;
+    }
+    .content_position {
+        float: left;
+        margin-left: 50px;
+    }
+</style>
+<div class="tabbable">
+    <!-- Only required for left/right tabs -->
+    <ul class="nav nav-tabs" id="state-tab">
+        <li class="active"><a href="#tab1" data-toggle="tab">网路状态</a></li>
+        <li><a href="#tab2" data-toggle="tab">供电状态</a></li>
+        <li><a href="#tab3" data-toggle="tab">环境状态</a></li>
+        <li><a href="#tab4" data-toggle="tab">柜内视频</a></li>
+        <li><a href="#tab5" data-toggle="tab">历史状态查询</a></li>
+        <li>
+            <button class="btn">返回</button></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab1" align="center">
+            <iframe src="./netsvg.htm" name="netsvg" id="netsvg" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="tab-pane" id="tab2" align="center">
+            <br>
+            <div align="center" id="demradio">
+            </div>
+            <div align="center">
+                <iframe src="./dem.htm" name="cadsvg" id="cadsvg" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab3" align="center">
+            <iframe src="./svgenv.htm" name="envsvg" id="envsvg" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="tab-pane" id="tab4" style="margin: 20px">
+            <table width="40%">
+                <tr>
+                    <td width="15%">
+                        <input type="radio" id="realvideo" name="video" checked="true" />实时语音视频</td>
+                    <td width="15%">
+                        <input type="radio" id="hisvideo" name="video" />本机柜录像</td>
+                </tr>
+            </table>
+            <div id="contHeight" style="float: left; width: 45%;">
+                <div class="spzlzt_btn">
+                    <br>
+                    <div style="width: 100%; float: left"></div>
+                    <div class="spzlzt_table">
+                        <object id="mPlayer" classid="CLSID:ACD4FBB3-85D8-426B-AE39-AFD371CD4D06" width="100%" height="500px" codebase="/CdPlayer.CAB#version=1.0.0.1"></object>
+                    </div>
+                </div>
+            </div>
+            <div id="hisinfo" style="float: right; width: 50%;">
+                <div id="sddd">
+                    录像时间&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" value="" id="datetimepicker1" readonly>
+                    &nbsp;&nbsp;&nbsp;&nbsp;至&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" value="" id="datetimepicker2" readonly>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" value="查询" id="querybtn">
+                </div>
+                <br>
+                <div id='hisvideolist' style="float: left; width: 80%"></div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab5">
+            <div id="his-state-info-timepicker" align="left" class="fspad">
+                开始时间&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" value="" id="datetimepicker3" readonly>
+                &nbsp;&nbsp;&nbsp;&nbsp;结束时间&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" value="" id="datetimepicker4" readonly>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" value="查询" id="wsdstatequery">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="temperature-info" style="float: left;width: 50%;height:500px;padding-top: 100px;"></div>
+<div id="humidity-info" style="float: right;width: 50%;height:500px;padding-top: 100px;"></div>

@@ -3,7 +3,7 @@
  */
 define(['text'], function(){
     var template = {
-        baseUrl: '/view',
+        baseUrl: '../view',
         templates: { },
         load: function(name, callback){
             var _this = this;
