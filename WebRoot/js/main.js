@@ -9,15 +9,16 @@ require.config({
     //baseUrl: '',
     paths: {
         //libs
-        jquery: _PLUGIN_PATH + 'jquery-2.2.3.min',
+        jquery: _PLUGIN_PATH + 'jquery-1.12.2',
         bootstrap: _PLUGIN_PATH + 'bootstrap/js/bootstrap.min',
         bootstrap_table: _PLUGIN_PATH + 'bootstrap/bootstrap-table/bootstrap-table.min',
         bootstrap_editable: _PLUGIN_PATH + 'bootstrap/bootstrap-editable/js/bootstrap-editable.min',
         "bootstrap_datetimepicker": _PLUGIN_PATH + 'bootstrap/bootstrap_datetimepicker/bootstrap_datetimepicker.min',
         layer: _PLUGIN_PATH + "layer2.2/layer",
         ztree: _PLUGIN_PATH + 'ztree/jquery.ztree.all.min',
+        handlebars: _PLUGIN_PATH + 'handlebars/handlebars',
 
-        director: _PLUGIN_PATH + 'director.min',
+        director: _PLUGIN_PATH + 'director',
         text: _PLUGIN_PATH + 'text',
         css: _PLUGIN_PATH + 'css',
 
@@ -36,7 +37,14 @@ require.config({
         "bootstrap_datetimepicker": ["jquery"],
         "layer": ["jquery"],
         "ztree": ["jquery"],
-
+        "handlebars": {
+            deps: ['jquery']
+            //exports: 'handlebars'
+        },
+        "director":{
+            deps: ['jquery'],
+            exports: 'director'
+        },
         "util": ["jquery", "layer", "text"],
         "wsclient": ["util"]
     },

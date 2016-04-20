@@ -74,7 +74,7 @@
             var username = $('#username').val().trim();
             var password = $('#password').val().trim();
 
-            if(validateLogin(username, password)){
+            /*if(validateLogin(username, password)){
                 $.ajax({
                     url: '/user/login',
                     type: 'POST',
@@ -85,8 +85,8 @@
                         else alert(data.msg);
                     }
                 })
-            };
-
+            }*/
+            location.href = 'index.html';
         });
     })
 </script>

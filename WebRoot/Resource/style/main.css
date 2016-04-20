@@ -155,7 +155,7 @@ padding-top:60px;}
 .menu-toggler{
 	float: right;
     margin: 18px 0 0 5px;
-    background-image: url(../images/sidebar_toggler_icon.png);
+    background-image: url(../image/common/sidebar_toggler_icon.png);
 	width: 24px;
     height: 24px;
     background-repeat: no-repeat;
