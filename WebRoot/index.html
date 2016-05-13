@@ -1,94 +1,59 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>华雁智能运维云</title>
-    <link rel="stylesheet" type="text/css" href="./resource/style/fontawesome/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="./resource/style/bootstrap/css/bootstrap.min.css">
-
-    <link rel="stylesheet" type="text/css" href="./resource/plugin/bootstrap/bootstrap-table/bootstrap-table.min.css">
-    <link rel="stylesheet" type="text/css" href="./resource/plugin/bootstrap/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
-
-    <link rel="stylesheet" type="text/css" href="./resource/style/main.css">
-    <script data-main="./js/main.js" src="./resource/plugin/require.js" defer async="true"></script>
+	<meta charset="UTF-8">
+	<title>OMICloud</title>
+	<link rel="stylesheet" type="text/css" href="resource/style/login.css">
+	<link rel="icon" href="resource/style/images/favicon.ico" type="image/x-icon" />
+ 	<link rel="shortcut icon" href="resource/style/images/favicon.ico" type="image/x-icon" />
+	<link rel="bookmark" href="resource/style/images/favicon.ico"/>
 </head>
 <body>
-<div id="header">
-    <div id="top-logo">
-        <a><img src="./resource/image/common/banner-logo.png"></a>
-        <div class="menu-toggler" id="menu-toggler"> </div>
-    </div>
-    <div class="top-menu">
-        <ul class="pull-right">
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user"></i>
-                    <span>admin</span>
-                    <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                    <li id="user_logout">
-                        <a>
-                            <i class="fa fa-power-off"></i>
-                            <span>退出</span>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li id="user_lock">
-                        <a>
-                            <i class="fa fa-unlock-alt"></i>
-                            <span>锁定</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</div>
-<div id="wrapper" class="">
-    <div id="sidebar">
-        <ul class="sidebar-menu" id="sidebar-menu">
-            <!--<li>-->
-                <!--<a href="Dashboard.html">-->
-                    <!--<i class="fa fa-home"></i>-->
-                    <!--<span>主页</span>-->
-                <!--</a>-->
-            <!--</li>-->
-            <li>
-                <a href="#/device/status">
-                    <i class="fa fa-calendar-o"></i>
-                    <span>设备状态</span>
-                </a>
-            </li>
-            <li>
-                <a  href="#/device/manage">
-                    <i class="fa fa-steam-square"></i>
-                    <span>设备管理</span>
-                </a>
-            </li>
-            <li>
-                <a href="#/device/alarm">
-                    <i class="fa fa-warning"></i>
-                    <span>设备告警</span>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <i class="fa fa-wrench"></i>
-                    <span>系统配置</span>
-                    <span class="fa fa-angle-left arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li><a href="#/alarm/setting"><i class="fa fa-warning"></i><span>告警配置</span></a></li>
-                    <li href="UserManage/User.html"><a><i class="fa fa-user"></i><span>用户管理</span></a></li>
-                    <li href="Log/Log.html"><a><i class="fa fa-info-circle"></i><span>日志管理</span></a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    <div id="content">
-       <!-- 请填充内容 -->
-    </div>
-</div>
+	<!-- <div class="loading"><img src="./resource/style/images/loader2.gif"></div> -->
+	<div class="loading">
+		<div class="loadingCenter">			
+			<img src="./resource/style/images/loader2.gif">
+			<span class="loading-text">加载中...</span>
+		</div>
+	</div>
+	<div class="navbar loginHeader">
+		<div id="login-logo">
+			<a><img src="./resource/style/images/banner-logo.png"></a>
+		</div>
+	</div>
+	<div class="login_container">
+		<div id="login-header">
+			<h3>用户登录</h3>
+		</div>
+		<div id="login-content" class="clearfix">
+			 <div  class="form-group">
+				<div class="input-group">
+					<span id="bg_user" class="input-group-addon bg_user">
+						<i class="glyphicon glyphicon-user"></i>
+					</span>
+					<input type="text" class="form-control" id="ipt_username">
+				</div>
+			</div>
+			<div  class="form-group">
+				<div class="input-group">
+					<span id="bg_pwd" class="input-group-addon bg_pwd">
+						<i class="glyphicon glyphicon-lock"></i>
+					</span>
+					<input type="password" class="form-control" id="ipt_password">
+				</div>
+			</div>
+			<div id="remember-me" class="pull-left">
+				<input type="checkbox" name="remember" id="remember">
+				<label id="remember-label" for="remember">记住我</label>
+			</div>
+			
+			<div class="pull-right">
+				<button type="button" class="btn btn-info" id="btnLogin">
+					登录
+				</button>
+			</div>					
+		</div>
+	</div>
+	<script type="text/javascript" data-main="./js/main" src="./resource/plugins/require.js"></script>
 </body>
 </html>

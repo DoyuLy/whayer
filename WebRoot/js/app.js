@@ -1,59 +1,57 @@
-/**
- * Created by duyu on 2016/4/19.
- */
-
-define([ 'director'], function(director){
-    var status = function(){
-        alert('status');
-        require(['./controllers/deviceStatusController'], function(deviceStatus){
-            deviceStatus.init();
-        });
+define(["template","jquery","director","./controller/index/index",
+	"handlebars","layer","bootstrap","util","underscore",
+    "NProgress","css!../resource/plugins/nprogress/nprogress",],
+	function(template,$,director,index,handlebars,layer,bootstrap,util,_,NProgress){
+	var router_global;
+	/*layer requireJS加载方式*/
+    layer.config({
+      path:"resource/plugins/layer/",//layer.js所在的目录，可以是绝对目录，也可以是相对目录
+    });
+	/*nprogress configure*/	
+	NProgress.configure({ showSpinner: false });
+	var allroutesFunction = function(){	
+		NProgress.start();	
+	    var route = window.location.hash.slice(2);
+    	var m_name = "./controller/"+route+"/"+route;
+    	if($("#content").length>0){    		
+	       	require([m_name],function(m){
+	            m.init();
+	            setTimeout(function(){
+	            	//NProgress.done();
+	            },1000);
+	        },function(error){
+	        	layer.msg(error.message);
+	        });
+    	}
     };
-    var manage = function(){
-        alert('manage');
-        require(['./controllers/deviceManageController'], function(deviceManage){
-            deviceManage.init();
-        });
+    var routeError=function(){
+    	console.log("not found");    	
+    }
+    function  initRoute(){
+        var routes = {};
+        router_global = Router(routes).configure({"notfound":routeError});
+        router_global.init();
+    };   
+    var app={
+    	router:null,
+    	init:function(){
+    		initRoute();
+    		/*define app global router*/
+    		this.router=router_global;
+    		var hash = window.location.hash;
+    		if(hash){
+    			require(["text!../view/layout.html","./js/controller/content.js"],function(layouttmpl,sidebar_top_content){
+                	$("body").html(layouttmpl);
+                	sidebar_top_content.init();
+                	/*window.location.href="#/dashboard";*/
+                	allroutesFunction();
+                });
+    		}else{    			
+    			index.init();
+    		}    		
+    	},onroutes:function(){
+    		allroutesFunction();
+    	}
     };
-    var alarm = function(){
-        alert('alarm');
-        require(['deviceAlarm'], function(deviceAlarm){
-            deviceAlarm.init();
-        });
-    };
-    var setting = function(){
-        alert('setting');
-    };
-    var userManage = function(){
-        alert('user manage');
-    };
-    var logManage = function(){
-        alert('log manage');
-    };
-
-    var app = {
-        routes: {
-           /* '/login': this.login,
-            '/index': this.index,*/
-            '/device/status': [status],
-            '/device/manage': [manage],
-            '/device/alarm': [alarm],
-            '/alarm/setting': [setting],
-            '/user/manage': [userManage],
-            '/log/manage': [logManage]
-        },
-        version: '0.1.0',
-        init: function(){
-            var router = Router(this.routes);
-            router.configure({
-                before: function(){
-                    //全局拦截器,验证cookie是否存在,服务端验证session是否存在(若只是cookie验证,cookie在服务端秘钥解密后进行对比)
-
-                }
-            });
-            router.init();
-        }
-    };
-
     return app;
 });
