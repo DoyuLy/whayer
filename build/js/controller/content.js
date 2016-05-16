@@ -156,10 +156,6 @@ define(["domReady!","jquery",
 				$("#sidebar-menu li a").removeClass("active");
 				$(evt.currentTarget).addClass("active");
 			}
-			var href=menuItem.attr("href")||menuItem.find("a").attr("href");
-			if(href&&href!="#"){
-				
-			}
 		}
 	};
 	return contentApp;

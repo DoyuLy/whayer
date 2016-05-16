@@ -60,7 +60,13 @@ requirejs.onError = function (error) {
     //console.log(error.message);
     layer.msg(error.message);
 };
-require(["domReady!","app"], function (doc,app) { 
+require(["domReady!","app","template"], function (doc,app,template) { 
         app.init();
+        /*template.load(['lock'],function(content1){
+            var c1 = content1;
+            template.load(['lock','changepwd'],function(content2){
+                var c2 = content2;
+            });
+        });*/
     }
 );
