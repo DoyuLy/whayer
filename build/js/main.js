@@ -61,6 +61,6 @@ requirejs.onError = function (error) {
     layer.msg(error.message);
 };
 require(["domReady!","app"], function (doc,app) { 
-        app.init(); 
+        app.init();
     }
 );

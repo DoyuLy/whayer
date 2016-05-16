@@ -33,7 +33,7 @@ define(["domReady!",
             var _this = this;
             var _res = _this.validate();
             if(_res.valid){   
-                cookie.set("user_name",$("#ipt_username").val(),1);
+                cookie.set("user_name",$("#ipt_username").val());
                 $("body").html(layouttmpl);                
                 require(["./js/controller/content.js"],function(sidebar_top_content){
                 	sidebar_top_content.init();

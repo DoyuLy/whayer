@@ -180,6 +180,26 @@ a.menu-toggler:hover{color:#fff;}
     height: 28px;  
     vertical-align: middle; 
 }
+.footer{
+    background: #fff !important;
+    border-top-color: #C8C7CC;
+
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    z-index: 1000;
+    border-top-width: 1px;
+    border-top-style: solid;
+
+    font-size: 12px;
+    padding: 8px 20px 5px;
+    display: none;
+}
+.footer-inner{
+    color: #555555;
+    float: left;
+}
 /*content*/
 #content{
 	margin-left:180px;

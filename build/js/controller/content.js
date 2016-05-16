@@ -47,7 +47,7 @@ define(["domReady!","jquery",
 						{url:"#/state",classname:"ico ico-nav-all",title:"设备状态"},
 						{url:"#/deviceonline",classname:"ico ico-nav-privilege",title:"设备管理"},
 						{url:"#/warningconfig",classname:"ico ico-nav-efficiency ",title:"告警配置"},
-						{url:"#/config",classname:"ico ico-nav-information",title:"系统配置",child:[
+						{url:"#config",classname:"ico ico-nav-information",title:"系统配置",child:[
 							{url:"#/role",classname:"ico ico-nav-buy",title:"角色管理"},
 							{url:"#/usergroup",classname:"ico ico-nav-all",title:"用户管理"},
 							{url:"#/permission",classname:"ico ico-user",title:"权限管理"},
@@ -83,8 +83,10 @@ define(["domReady!","jquery",
 			var hash = window.location.hash;
 			if(!hash){
 				window.location.href="#/dashboard";
-			}
-			_this.setSelectedItem(hash);
+				_this.setSelectedItem("#/dashboard");
+			}else{
+				_this.setSelectedItem(hash);
+			}			
 		},
 		setSelectedItem:function(hash){
 			/*add class to selected item*/
@@ -105,6 +107,7 @@ define(["domReady!","jquery",
 			var _this = this;
 			var targetID = e.currentTarget.id;
 			if(targetID=="user_logout"){
+				cookie.remove("user_name");
 				window.location.href="index.html";
 			}else if(targetID=="pwd_update"){
 				_this.changePwd();
