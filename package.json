@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "handlebars-helpers": "^0.6.0",
+    "templates": "git+https://github.com/jonschlinkert/templates.git"
+  }
+}

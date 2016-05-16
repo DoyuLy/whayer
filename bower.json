@@ -1,0 +1,31 @@
+{
+  "name": "whayer",
+  "homepage": "https://github.com/DoyuLy/whayer",
+  "authors": [
+    "dzy <duyud@qq.com>"
+  ],
+  "description": "0.1.0",
+  "main": "app.js",
+  "keywords": [
+    "whayer",
+    "clouds"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "director": "https://github.com/flatiron/director.git#^1.2.8",
+    "underscore": "^1.8.3",
+    "lodash": "https://github.com/lodash/lodash.git#^4.12.0",
+    "underscore-deep-extend": "^0.0.5",
+    "underscore-tpl": "^0.3.3",
+    "bootstrap": "^3.3.6",
+    "highcharts": "highcharts-release#^4.2.5"
+  }
+}
