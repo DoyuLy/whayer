@@ -20,7 +20,7 @@ define(['text'], function(){
                 callback(_this.templates[name]);
             });*/
 
-            //single template
+            /*load multiple template*/
             if(typeof name=="string"){
                 if(!_this.templates[name]){
                     callback(_this.templates[name]);return;
@@ -39,22 +39,16 @@ define(['text'], function(){
                     for (var i = 0; i < name.length; i++) {
                         var template_name = name[i];
                         if(!_this.templates[template_name]){//template did not load yet
-                             _this.templates[template_name] = template_name;
+                             _this.templates[template_name] = "";
                             var _module = 'text!' + _this.baseUrl + template_name + _this.suffix;
                             _moduleArray.push(_module);
                         }
                     }
-                    require(_moduleArray,function(){
+                    require(_moduleArray,function(){ 
                         var args = arguments;
-                        /*update template content*/
-                        var objarr = [];
-                        for (var i = 0; i < name.length; i++) {
-                            var _tmpName = name[i];
-                            objarr.push({name:_tmpName,content:arguments[i]});
-                        }
-                        _this.updateTemplates(name,objarr);
+                        var arr = _this.updateTemplates(args,_moduleArray);
                         /*excude callback*/
-                        callback(args);
+                        callback(objarr);
                     });
                 }
             }
@@ -62,26 +56,32 @@ define(['text'], function(){
         isArray:function(obj){
             return Object.prototype.toString.call(obj)==="[object Array]";
         },
-        updateTemplates:function(loadArr,newArr){
-            var arr=[];
-            for (var i = 0; i < loadArr.length; i++) {
-                var _obj = loadArr[i];
-                var _name = _obj["name"];
-                var _tmpContent = _this.templates[_name];
-                if(_tmpContent){//该模板已加载
-                   arr.push({name:_name,content:_tmpContent});
-                }else{//模板未加载,从newArr更新模板结果
-                    //_this.templates[_name]=
-                    for (var j = 0; j< newArr.length; j++) {
-                        var _newObj = newArr[j];
-                        if(_newObj["name"==_name]){
-                            _this.templates[_name]=_newObj["content"];
-                             arr.push({name:_name,content:_newObj["content"]});
-                        }
+        updateTemplates:function(args,_moduleArray){
+           var _this = this;
+           var args = arguments;
+            var objarr = [];
+            for (var i = 0; i < name.length; i++) {
+                var _tmpName = name[i];
+                var content = _this.templates[_tmpName];
+                if(content){//已加载
+                      objarr.push({name:_tmpName,content:content});
+                }else{
+                    for (var j = 0; j < _moduleArray.length; j++) {
+                        var _mName = _moduleArray[j];
+                        var index1 = _mName.lastIndexOf('/')+1;
+                        var index2 = _mName.lastIndexOf('.');
+                        _mName=_mName.substring(index1,index2);
+                        if(_tmpName==_mName){
+                            content = args[j];
+                            /*更新template值*/
+                            _this.templates[_tmpName]=content;
+                            objarr.push({name:_tmpName,content:content});
+                            break;
+                        }                               
                     }
-                }                
-            } 
-            return arr;          
+                }                       
+            }
+            return objarr;    
         }
     };
 
