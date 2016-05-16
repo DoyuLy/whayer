@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>OMICloud</title>
+	<link rel="stylesheet" type="text/css" href="resource/style/login.css">
+	<link rel="stylesheet" type="text/css" href="resource/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="icon" href="resource/style/images/favicon.ico" type="image/x-icon" />
+ 	<link rel="shortcut icon" href="resource/style/images/favicon.ico" type="image/x-icon" />
+	<link rel="bookmark" href="resource/style/images/favicon.ico"/>
+</head>
+<body>
+	<!-- <div class="loading"><img src="./resource/style/images/loader2.gif"></div> -->
+	<div class="loading">
+		<div class="loadingCenter">			
+			<img src="./resource/style/images/loader2.gif">
+			<span class="loading-text">加载中...</span>
+		</div>
+	</div>
+	<div class="navbar loginHeader">
+		<div id="login-logo">
+			<a><img src="./resource/style/images/banner-logo.png"></a>
+		</div>
+	</div>
+	<div class="login_container">
+		<div id="login-header">
+			<h3>用户登录</h3>
+		</div>
+		<div id="login-content" class="clearfix">
+			 <div  class="form-group">
+				<div class="input-group">
+					<span id="bg_user" class="input-group-addon bg_user">
+						<i class="glyphicon glyphicon-user"></i>
+					</span>
+					<input type="text" class="form-control" id="ipt_username" value="admin">
+				</div>
+			</div>
+			<div  class="form-group">
+				<div class="input-group">
+					<span id="bg_pwd" class="input-group-addon bg_pwd">
+						<i class="glyphicon glyphicon-lock"></i>
+					</span>
+					<input type="password" class="form-control" id="ipt_password">
+				</div>
+			</div>
+			<div id="remember-me" class="pull-left">
+				<input type="checkbox" name="remember" id="remember">
+				<label id="remember-label" for="remember">记住我</label>
+			</div>
+			
+			<div class="pull-right">
+				<button type="button" class="btn btn-info" id="btnLogin">
+					登录
+				</button>
+			</div>					
+		</div>
+	</div>
+	<script type="text/javascript" data-main="./js/main" src="./resource/plugins/require.js"></script>
+</body>
+</html>
