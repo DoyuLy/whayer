@@ -11,10 +11,14 @@ define(["director", "template", "jquery", "NProgress"],
             },
             router: null,
             init: function () {
+                var _this = this;
                 this.initRoute();
                 var hash = window.location.hash;
                 if(hash){
-                    this.renderLayout();
+                    this.renderLayout(function(){
+                        _this.onroutes();
+                    });
+
                 }else{
                     //初始化登录
                     require(["login"], function (login) {
@@ -55,11 +59,12 @@ define(["director", "template", "jquery", "NProgress"],
 
             },
             //登录成功渲染layout
-            renderLayout: function () {
+            renderLayout: function (cb) {
                 template.load("/layout", function (content) {
                     $("body").html(content);
                     require(["layout"], function (layout) {
                         layout.init();
+                        cb && cb();
                     });
                 });
             }
