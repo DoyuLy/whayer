@@ -1,4 +1,4 @@
-/*包括sidebar和topmenu*/
+
 define(["domReady!", "app", "jquery", "template", "cookie"],
     function (doc, app, $, template, cookie) {
 
