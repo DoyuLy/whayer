@@ -26,6 +26,13 @@
     "underscore-deep-extend": "^0.0.5",
     "underscore-tpl": "^0.3.3",
     "bootstrap": "^3.3.6",
-    "highcharts": "highcharts-release#^4.2.5"
+    "highcharts": "highcharts-release#^4.2.5",
+    "layer": "https://github.com/sentsin/layer.git",
+    "require-css": "https://github.com/guybedford/require-css.git#^0.1.8",
+    "text": "https://github.com/requirejs/text.git#^2.0.15",
+    "domReady": "https://github.com/requirejs/domReady.git#^2.0.1",
+    "requirejs": "https://github.com/requirejs/requirejs.git#^2.2.0",
+    "r.js": "https://github.com/requirejs/r.js.git#^2.2.0",
+    "bootstrap-table": "^1.10.1"
   }
 }

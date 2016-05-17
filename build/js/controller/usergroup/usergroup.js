@@ -1,8 +1,11 @@
-define(["text!../../../view/usergroup.html",],function(userGroupTmpl){
-	var app={
-		init:function(){
-			$("#content").html(userGroupTmpl);
-		}
-	};
-	return app;
+define(["app", "template"], function (app, template) {
+    var usergroup = {
+        init: function () {
+            template.load("/controller/usergroup", function (doc) {
+                debugger;
+                app.region.contentRegion.html(doc);
+            });
+        }
+    };
+    return usergroup;
 });
