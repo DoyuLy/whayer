@@ -52,7 +52,7 @@ define(["domReady!","jquery",
 							{url:"#/usergroup",classname:"ico ico-nav-all",title:"用户管理"},
 							{url:"#/permission",classname:"ico ico-user",title:"权限管理"},
 							{url:"#/log",classname:"ico ico-nav-communication",title:"日志管理"},
-						]},
+						]}
 					];
 			_this.menuData = data;		
 			var sidebarStr = "";
