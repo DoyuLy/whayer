@@ -17,7 +17,7 @@ define(["domReady!", "app", "jquery", "template", "cookie"],
         lockTmpl: null,
         init: function () {
             var _this = this;
-            template.load(["/other/changepwd", "/modal/lock"], function(arr){
+            template.load(["/modal/changepwd", "/other/lock"], function(arr){
                 _this.pwdTmpl = arr[0];
                 _this.lockTmpl = arr[1];
 
