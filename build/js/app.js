@@ -1,5 +1,5 @@
-define(["director", "template", "jquery", "NProgress"],
-    function (Router, template, $, NProgress) {
+define(["director", "template", "jquery", "NProgress","layer"],
+    function (Router, template, $, NProgress,layer) {
 
         layer.config({path: "resource/plugins/layer/"});
         NProgress.configure({showSpinner: false});

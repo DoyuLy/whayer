@@ -73,13 +73,12 @@ require.config({
             exports: "highchartsTheme"
         }
     },
-    waitSeconds: 0,
-    urlArgs: "v=" + (new Date()).getTime()
+    waitSeconds: 0
 });
 requirejs.onError = function (error) {
-    //layer.msg(error.message);
+    console.log(error.message);
 };
-require(["domReady!", "app", "text", "template", "bootstrap", "util", "handlebars", "layer"], function (doc, app) {
+require(["domReady!", "app", "text", "template", "bootstrap", "util", "handlebars"], function (doc, app) {
         app.init();
     }
 );
