@@ -73,7 +73,9 @@ require.config({
             exports: "highchartsTheme"
         }
     },
-    waitSeconds: 0
+    waitSeconds: 0,
+    urlArgs: "v=0.1.0"
+    /*,urlArgs: "v=" + (new Date()).getTime()*/
 });
 requirejs.onError = function (error) {
     layer.msg(error.message);
