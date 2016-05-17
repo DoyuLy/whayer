@@ -43,12 +43,12 @@ define(["director", "template", "jquery", "NProgress"],
             },
             //动态注册router回调
             onroutes: function () {
-                //NProgress.start();
+                NProgress.start();
                 var route = window.location.hash.slice(2);
                 var name = "./controller/" + route + "/" + route;
                 require([name], function (controller) {
                     controller.init();
-                    //NProgress.done();
+                    NProgress.done();
                 }, function (error) {
                     layer.msg("加载" + route + "出错！");
                 });
