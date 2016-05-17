@@ -77,7 +77,7 @@ require.config({
     urlArgs: "v=" + (new Date()).getTime()
 });
 requirejs.onError = function (error) {
-    layer.msg(error.message);
+    //layer.msg(error.message);
 };
 require(["domReady!", "app", "text", "template", "bootstrap", "util", "handlebars", "layer"], function (doc, app) {
         app.init();
