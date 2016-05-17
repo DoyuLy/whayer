@@ -16,7 +16,7 @@ define(['text'], function () {
                     //_this.templates[name] = name;/*initial template content as name*/                
                     var _module = 'text!' + this.baseUrl + name + _this.suffix;
                     require([_module], function (content) {
-                        _this.updateTemplates([name], [{name: name, content: content}], [_module]);
+                        _this.updateTemplates([name], [content], [_module]);
                         callback(content);
                     });
                 }

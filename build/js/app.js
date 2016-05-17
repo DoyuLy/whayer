@@ -12,11 +12,15 @@ define(["director", "template", "jquery", "NProgress"],
             router: null,
             init: function () {
                 this.initRoute();
-
-                //初始化登录
-                require(["login"], function (login) {
-                    login.init();
-                })
+                var hash = window.location.hash;
+                if(hash){
+                    this.renderLayout();
+                }else{
+                    //初始化登录
+                    require(["login"], function (login) {
+                        login.init();
+                    });
+                }
             },
             initRoute: function () {
                 this.router = Router({});
@@ -40,7 +44,6 @@ define(["director", "template", "jquery", "NProgress"],
             //动态注册router回调
             onroutes: function () {
                 //NProgress.start();
-                debugger;
                 var route = window.location.hash.slice(2);
                 var name = "./controller/" + route + "/" + route;
                 require([name], function (controller) {

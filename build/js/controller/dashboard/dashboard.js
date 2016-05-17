@@ -13,6 +13,7 @@ define(["domReady!", "app", "jquery", "highcharts", "template"], function (doc, 
         init: function () {
             var _this = this;
             template.load("/controller/dashboard", function(doc){
+                debugger;
                 app.region.contentRegion = $("#content");
                 app.region.contentRegion.html(doc);
                 _this.initChart();
