@@ -80,6 +80,7 @@ requirejs.onError = function (error) {
     //layer.msg(error.message);
 };
 require(["domReady!", "app", "text", "template", "bootstrap", "util", "handlebars", "layer"], function (doc, app) {
+        debugger;
         app.init();
     }
 );

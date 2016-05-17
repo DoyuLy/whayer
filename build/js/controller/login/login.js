@@ -4,7 +4,7 @@ define(["domReady!", "app", "jquery", "layer", "template", "cookie"],
             init: function () {
                 var _this = this;
                 template.load("/controller/login", function (login) {
-                    $("#content").html(login);
+                    $("body").html(login);
                     $(".loading").hide();
                     _this.attatchEvent();
                 });
