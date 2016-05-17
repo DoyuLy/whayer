@@ -76,7 +76,7 @@ require.config({
     waitSeconds: 0
 });
 requirejs.onError = function (error) {
-    console.log(error.message);
+    layer.msg(error.message);
 };
 require(["domReady!", "app", "text", "template", "bootstrap", "util", "handlebars"], function (doc, app) {
         app.init();
