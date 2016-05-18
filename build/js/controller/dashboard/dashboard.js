@@ -53,14 +53,9 @@ define(["domReady!", "app", "jquery", "highcharts", "template"], function (doc, 
                     type: 'pie',
                     name: '百分比',
                     data: [
-                        ['在线',   45.0],
-                        ['离线',       26.8],
-                        {
-                            name: '未知',
-                            y: 12.8,
-                            sliced: true,
-                            selected: true
-                        }
+                        ['在线',45.0],
+                        ['离线', 26.8],
+                        ['未知', 26.8]
                     ]
                 }]
             });
