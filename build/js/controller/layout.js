@@ -54,6 +54,8 @@ define(["domReady!", "app", "jquery", "template", "cookie"],
             var data = [
                 {url: "#/dashboard", classname: "ico ico-home", title: "主页"},
                 {url: "#/state", classname: "ico ico-nav-all", title: "设备状态"},
+                {url: "#/state", classname: "ico ico-nav-communication", title: "运维统计"},
+                {url: "#/state", classname: "ico ico-nav-privilege", title: "告警管理"},
                 {url: "#/deviceonline", classname: "ico ico-nav-privilege", title: "设备管理"},
                 {url: "#/warningconfig", classname: "ico ico-nav-efficiency ", title: "告警配置"},
                 {
