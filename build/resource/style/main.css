@@ -180,6 +180,38 @@ a.menu-toggler:hover{color:#fff;}
     height: 28px;  
     vertical-align: middle; 
 }
+/*css sprite ,sidebar ico*/
+.ico{
+    width: 16px;
+    height: 16px;
+    background-image:url(images/sprite.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+.ico-home{
+    background-position: -25px 0;
+}
+.ico-user{
+    background-position: 0 0;
+}
+.ico-nav-all{
+    background-position: -50px 0;
+}
+.ico-nav-privilege{
+    background-position: -425px -50px;
+}
+.ico-nav-efficiency {
+    background-position: -75px 0;
+}
+.ico-nav-information {    
+    background-position: -150px 0;
+}
+.ico-nav-communication {
+    background-position: -125px 0;
+}
+.ico-nav-buy {
+    background-position: -300px 0;
+}
 .footer{
     background: #fff !important;
     border-top-color: #C8C7CC;

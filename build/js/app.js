@@ -1,5 +1,5 @@
-define(["director", "template", "jquery", "NProgress","layer"],
-    function (Router, template, $, NProgress,layer) {
+define(["director", "template", "jquery", "NProgress","layer","cookie"],
+    function (Router, template, $, NProgress,layer,cookie) {
 
         layer.config({path: "resource/plugins/layer/"});
         NProgress.configure({showSpinner: false});
@@ -14,16 +14,27 @@ define(["director", "template", "jquery", "NProgress","layer"],
                 var _this = this;
                 this.initRoute();
                 var hash = window.location.hash;
+                var user_name = cookie.get("user_name");
                 if(hash){
-                    this.renderLayout(function(){
-                        _this.onroutes();
-                    });
-
+                    if(user_name){                        
+                        this.renderLayout(function(){
+                            _this.onroutes();
+                        });
+                    }else{
+                        window.location.href="index.html"; 
+                    }
                 }else{
-                    //初始化登录
-                    require(["login"], function (login) {
-                        login.init();
-                    });
+                    if(user_name){
+                        window.location.href="#/dashboard";
+                        this.renderLayout(function(){
+                            _this.onroutes();
+                        });
+                    }else{
+                        //初始化登录
+                        require(["login"], function (login) {
+                            login.init();
+                        });                        
+                    }
                 }
             },
             initRoute: function () {
