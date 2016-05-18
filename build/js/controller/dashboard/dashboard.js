@@ -21,20 +21,63 @@ define(["domReady!", "app", "jquery", "highcharts", "template"], function (doc, 
         initChart: function () {
             resizeChart();
             $('#container1').highcharts({
-                title: {
-                    text: '月平均温度',
-                    x: -20 //center
+                colors:["#FFDA0E","#41FFF9","#6EA8FF"],               
+                credits:{enabled:false},
+                chart: {
+                    type: 'pie',
+                    options3d: {
+                        enabled: true,
+                        alpha: 45,
+                        beta: 0
+                    }
                 },
-                subtitle: {
-                    text: 'Source: WorldClimate.com',
-                    x: -20
+                title: {
+                    align:"left",
+                    text: '设备在线率'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        depth: 35,
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        }
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: '百分比',
+                    data: [
+                        ['在线',   45.0],
+                        ['离线',       26.8],
+                        {
+                            name: '未知',
+                            y: 12.8,
+                            sliced: true,
+                            selected: true
+                        }
+                    ]
+                }]
+            });
+
+            $('#container2').highcharts({  
+                colors:["#FF0000","#1417FF"],              
+                credits:{enabled:false},
+                title: {
+                    align:"left",
+                    text: '系统负荷'
                 },
                 xAxis: {
-                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                    categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
                 },
                 yAxis: {
                     title: {
-                        text: 'Temperature (°C)'
+                        text: '系统负载'
                     },
                     plotLines: [{
                         value: 0,
@@ -43,7 +86,7 @@ define(["domReady!", "app", "jquery", "highcharts", "template"], function (doc, 
                     }]
                 },
                 tooltip: {
-                    valueSuffix: '°C'
+                    valueSuffix: '%'
                 },
                 legend: {
                     layout: 'vertical',
@@ -52,35 +95,78 @@ define(["domReady!", "app", "jquery", "highcharts", "template"], function (doc, 
                     borderWidth: 0
                 },
                 series: [{
-                    name: 'Tokyo',
+                    name: '内存',
                     data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
                 }, {
-                    name: 'New York',
+                    name: 'CPU',
                     data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
-                }, {
-                    name: 'Berlin',
-                    data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
-                }, {
-                    name: 'London',
-                    data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
                 }]
             });
-            /*container2*/
-            $('#container2').highcharts({
+           
+            $('#container3').highcharts({
+                colors:["#CE3737","#F0C63E","#57E041"],               
+                credits:{enabled:false},
+                chart: {
+                    type: 'pie',
+                    options3d: {
+                        enabled: true,
+                        alpha: 45,
+                        beta: 0
+                    }
+                },
+                title: {
+                    align:"left",
+                    text: '设备故障率'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        depth: 35,
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.name}',
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        }
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: '百分比',
+                    data: [
+                        ['故障',20.8],
+                        ['正常',48.5],
+                        {
+                            name: '未知',
+                            y: 38.8,
+                            sliced: true,
+                            selected: true
+                        }
+                    ]
+                }]
+            });
+
+            $('#container4').highcharts({   
+                colors:["#57E041","#1417FF"],              
+                credits:{enabled:false},
                 chart: {
                     type: 'column'
                 },
                 title: {
-                    text: 'Total fruit consumtion, grouped by gender'
+                    align:"left",
+                    text: '视频故障类别'
                 },
                 xAxis: {
-                    categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                    categories: ['清晰度', '亮度', '偏色', '冻结', '信号丢失']
                 },
                 yAxis: {
                     allowDecimals: false,
                     min: 0,
                     title: {
-                        text: 'Number of fruits'
+                        text: '故障总数'
                     }
                 },
                 tooltip: {
@@ -96,130 +182,9 @@ define(["domReady!", "app", "jquery", "highcharts", "template"], function (doc, 
                     }
                 },
                 series: [{
-                    name: 'John',
+                    name: '设备A',
                     data: [5, 3, 4, 7, 2],
                     stack: 'male'
-                }, {
-                    name: 'Joe',
-                    data: [3, 4, 4, 2, 5],
-                    stack: 'male'
-                }, {
-                    name: 'Jane',
-                    data: [2, 5, 6, 2, 1],
-                    stack: 'female'
-                }, {
-                    name: 'Janet',
-                    data: [3, 0, 4, 4, 3],
-                    stack: 'female'
-                }]
-            });
-
-            $('#container3').highcharts({
-                chart: {
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false
-                },
-                title: {
-                    text: 'Browser market shares at a specific website, 2010'
-                },
-                tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-                },
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: true,
-                            color: '#000000',
-                            connectorColor: '#000000',
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                        }
-                    }
-                },
-                series: [{
-                    type: 'pie',
-                    name: 'Browser share',
-                    data: [
-                        ['Firefox', 45.0],
-                        ['IE', 26.8],
-                        {
-                            name: 'Chrome',
-                            y: 12.8,
-                            sliced: true,
-                            selected: true
-                        },
-                        ['Safari', 8.5],
-                        ['Opera', 6.2],
-                        ['Others', 0.7]
-                    ]
-                }]
-            });
-
-            $('#container4').highcharts({
-                chart: {
-                    type: 'area'
-                },
-                title: {
-                    text: 'US and USSR nuclear stockpiles'
-                },
-                subtitle: {
-                    text: 'Source: thebulletin.metapress.com'
-                },
-                xAxis: {
-                    labels: {
-                        formatter: function () {
-                            return this.value; // clean, unformatted number for year
-                        }
-                    }
-                },
-                yAxis: {
-                    title: {
-                        text: 'Nuclear weapon states'
-                    },
-                    labels: {
-                        formatter: function () {
-                            return this.value / 1000 + 'k';
-                        }
-                    }
-                },
-                tooltip: {
-                    pointFormat: '{series.name} produced <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
-                },
-                plotOptions: {
-                    area: {
-                        pointStart: 1940,
-                        marker: {
-                            enabled: false,
-                            symbol: 'circle',
-                            radius: 2,
-                            states: {
-                                hover: {
-                                    enabled: true
-                                }
-                            }
-                        }
-                    }
-                },
-                series: [{
-                    name: 'USA',
-                    data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640, 1005, 1436,
-                        2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126, 27387, 29459, 31056, 31982,
-                        32040, 31233, 29224, 27342, 26662, 26956, 27912, 28999, 28965, 27826, 25579,
-                        25722, 24826, 24605, 24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344,
-                        23586, 22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-                        10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104
-                    ]
-                }, {
-                    name: 'USSR/Russia',
-                    data: [null, null, null, null, null, null, null, null, null, null, 5, 25, 50,
-                        120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322, 4238, 5221, 6129,
-                        7089, 8339, 9399, 10538, 11643, 13092, 14478, 15915, 17385, 19055, 21205,
-                        23044, 25393, 27935, 30062, 32049, 33952, 35804, 37431, 39197, 45000, 43000,
-                        41000, 39000, 37000, 35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000,
-                        22000, 21000, 20000, 19000, 18000, 18000, 17000, 16000
-                    ]
                 }]
             });
         }
