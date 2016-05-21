@@ -51,7 +51,7 @@ define(["director", "template", "jquery", "NProgress","layer","cookie"],
                         NProgress.done();
                     },
                     notfound: function (error) {
-                        layer.msg("没有此路由...");
+                        //layer.msg("没有此路由...");
                     }
                 });
                 this.router.init();
@@ -65,7 +65,7 @@ define(["director", "template", "jquery", "NProgress","layer","cookie"],
                     controller.init();
                     NProgress.done();
                 }, function (error) {
-                    layer.msg("加载" + route + "出错！");
+                    layer.msg("加载" + route + "出错！</br>"+error.message);
                 });
 
             },

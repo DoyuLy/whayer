@@ -11,9 +11,9 @@ require.config({
         //--------------------  libs  --------------------
         jquery: _PLUGIN_PATH + 'jquery-1.12.2',
         bootstrap: _PLUGIN_PATH + 'bootstrap/js/bootstrap.min',
-        bootstrap_table: _PLUGIN_PATH + 'bootstrap/bootstrap-table/bootstrap-table.min',
-        bootstrap_table_zh: _PLUGIN_PATH + 'bootstrap/bootstrap-table/local/bootstrap-table-zh-CN.min',
-        bootstrap_editable: _PLUGIN_PATH + 'bootstrap/bootstrap-editable/js/bootstrap-editable.min',
+        bootstrap_table: _PLUGIN_PATH + 'bootstrap-table/bootstrap-table.min',
+        bootstrap_table_zh: _PLUGIN_PATH + 'bootstrap-table/locale/bootstrap-table-zh-CN.min',
+        /*bootstrap_editable: _PLUGIN_PATH + 'bootstrap-table/extensions/editable/bootstrap-editable.min',*/
         //bootstrap_combobox: _PLUGIN_PATH + 'bootstrap/bootstrap-combobox/bootstrap-combobox',
         layer: _PLUGIN_PATH + "layer/layer",
         ztree: _PLUGIN_PATH + 'ztree/jquery.ztree.all.min',
@@ -47,10 +47,14 @@ require.config({
     shim: {
         "login": {deps: ["css!../resource/style/login.css"]},
         "layout": {deps: ["css!../resource/style/main.css"]},
-
-        "bootstrap": {
-            deps: ["jquery", "css!../resource/plugins/bootstrap/css/bootstrap.min.css"]
+        "bootstrap_table":{
+            deps:["bootstrap","css!../resource/plugins/bootstrap-table/bootstrap-table.min.css"]
         },
+        "bootstrap": {
+            deps: ["jquery", "css!../resource/plugins/bootstrap/css/bootstrap.min.css"],
+            exports:"bootstrap"
+        },
+        "bootstrap_table_zh":{exports:"bootstrap_table_zh"},
         "layer": ["jquery"],
         "ztree": ["jquery"],
         "handlebars": {
@@ -73,8 +77,8 @@ require.config({
             exports: "highchartsTheme"
         }
     },
-    waitSeconds: 0,
-    urlArgs: "v=0.1.0"
+    waitSeconds: 0
+   /* urlArgs: "v=0.1.0"*/
     /*,urlArgs: "v=" + (new Date()).getTime()*/
 });
 requirejs.onError = function (error) {

@@ -54,9 +54,8 @@ define(["domReady!", "app", "jquery", "template", "cookie"],
             var data = [
                 {url: "#/dashboard", classname: "ico ico-home", title: "主页"},
                 {url: "#/state", classname: "ico ico-nav-all", title: "设备状态"},
-                {url: "#/maintenance", classname: "ico ico-nav-communication", title: "运维统计"},
                 {url: "#/warn", classname: "ico ico-nav-privilege", title: "告警管理"},
-                {url: "#/deviceonline", classname: "ico ico-nav-privilege", title: "设备管理"},
+                {url: "#/deviceonline", classname: "ico ico-nav-communication", title: "设备管理"},
                 {url: "#/warningconfig", classname: "ico ico-nav-efficiency ", title: "告警配置"},
                 {
                     url: "#config", classname: "ico ico-nav-information", title: "系统配置",
@@ -64,7 +63,7 @@ define(["domReady!", "app", "jquery", "template", "cookie"],
                         {url: "#/role", classname: "ico ico-nav-buy", title: "角色管理"},
                         {url: "#/usergroup", classname: "ico ico-nav-all", title: "用户管理"},
                         {url: "#/permission", classname: "ico ico-user", title: "权限管理"},
-                        {url: "#/log", classname: "ico ico-nav-communication", title: "日志管理"}
+                        {url: "#/vqd", classname: "ico ico-nav-communication", title: "质量诊断"}
                     ]
                 }
             ];

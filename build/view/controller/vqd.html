@@ -1,0 +1,75 @@
+<div class="bg_white vqd">
+   <ul id="vqdTab" class="nav nav-tabs">
+      <li class="active"><a href="#paramCofing" data-toggle="tab">算法参数配置</a></li>
+      <li><a href="#projectConfig" data-toggle="tab">算法方案配置</a></li>
+      <li><a href="#diagnose" data-toggle="tab">质量诊断</a></li>
+   </ul>
+   <div id="vqdTabContent" class="tab-content">
+      <div class="tab-pane fade in active" id="paramCofing">
+         <div class="panel-body">
+           <!-- <table id="configTable"></table> -->
+            <div class="row">
+              <div class="col-md-12">
+                <button type="button" id="addDiagnose" class="btn btn-success algorithmNameAdd">新增算法</button>
+              </div>
+            </div>
+            <div class="row">
+              <div  class="col-md-12">
+                <table id="configTable"></table>
+              </div>
+          </div>
+         </div>
+      </div>
+      <div class="tab-pane fade" id="projectConfig">
+         <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12">
+                  <button type="button" id="addProject" class="btn btn-success algorithmNameAdd">新增方案</button>
+              </div>
+            </div>
+            <div class="row">
+              <div  class="col-md-12">
+                <table id="projectTable"></table>
+              </div>
+            </div>
+         </div>
+      </div>
+      <div class="tab-pane fade" id="diagnose">
+        <div class="panel-body">
+            <div class="panel panel-default">
+               <div class="panel-heading"><h3 class="panel-title">手动执行</h3></div>
+               <div class="panel-body">
+                  <div class="row">
+                    <div class="col-md-12 form-inline">
+                      <label class="control-label">视频诊断算法方案：</label>
+                      <select id="projectGroup" class="form-control mr20">
+                        <option value="0">诊断方案1</option>
+                        <option value="1">诊断方案2</option>
+                      </select>
+                      <label class="control-label">目标设备组：</label>
+                      <select id="deviceGroup" class="form-control mr20">
+                        <option value="0">设备组1</option>
+                        <option value="1">设备组2</option>
+                      </select>
+                      <button type="button" id="execNow" class="btn btn-success">立即执行</button>
+                    </div>
+                  </div>
+               </div>
+            </div>
+            <div class="panel panel-default">
+               <div class="panel-heading"><h3 class="panel-title">任务执行</h3></div>
+               <div class="panel-body">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <button type="button" id="addTask" class="btn btn-success">新增任务</button>
+                    </div>
+                  </div>
+                  <div class="row panel-body">
+                    <table id="taskTable"></table>
+                  </div>
+               </div>
+            </div>
+        </div>         
+      </div>
+   </div>
+</div>

@@ -2,8 +2,8 @@ define(["domReady!","template","layer","highcharts"], function (doc,template,lay
     var state = {
         init: function () {
         	var _this = this;
-            template.load("/controller/maintenance", function (doc) {
-                $("#content").html(doc);
+            template.load("/controller/maintenance", function (_doc) {
+                $("#content").html(_doc);
             	_this.attatchEvent();
             	_this.initTabData(0);
             });
