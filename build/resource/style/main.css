@@ -281,6 +281,9 @@ a.menu-toggler:hover{color:#fff;}
 .grouppadding{    
      padding: 10px 20px;
 }
+
+#content .mr5{ margin-right:5px;}
+#content .mr20{ margin-right:20px;}
 /*state module*/
 .stats {
     text-align: center;
@@ -313,8 +316,6 @@ a.menu-toggler:hover{color:#fff;}
 .vqd{
 
 }
-.vqd .mr5{ margin-right:5px;}
-.vqd .mr20{ margin-right:20px;}
 
 
 /**/
@@ -322,4 +323,9 @@ a.menu-toggler:hover{color:#fff;}
 .statusmonitor .treeborder{
     height: 100%;
     border-right: 1px solid #D0D0D0;
+}
+/*statusmonitor*/
+.statusmonitor .pd10{
+    padding-left: 10px;
+    padding-top: 10px;
 }

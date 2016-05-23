@@ -16,7 +16,7 @@ require.config({
         /*bootstrap_editable: _PLUGIN_PATH + 'bootstrap-table/extensions/editable/bootstrap-editable.min',*/
         //bootstrap_combobox: _PLUGIN_PATH + 'bootstrap/bootstrap-combobox/bootstrap-combobox',
         layer: _PLUGIN_PATH + "layer/layer",
-        ztree: _PLUGIN_PATH + 'ztree/jquery.ztree.all.min',
+        ztree: _PLUGIN_PATH + 'ztree/js/jquery.ztree.all.min',
         handlebars: _PLUGIN_PATH + 'handlebars/handlebars',
         underscore: _PLUGIN_PATH + 'underscore/underscore-min',
         highcharts: _PLUGIN_PATH + "Highcharts/highcharts",
@@ -56,7 +56,7 @@ require.config({
         },
         "bootstrap_table_zh":{exports:"bootstrap_table_zh"},
         "layer": ["jquery"],
-        "ztree": ["jquery"],
+        "ztree": ["jquery","css!../resource/plugins/ztree/css/metroStyle/metroStyle.css"],
         "handlebars": {
             deps: ["jquery"],
             exports: "handlebars"

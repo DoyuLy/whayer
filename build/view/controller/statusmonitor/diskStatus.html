@@ -1,0 +1,43 @@
+<div class="panel-body">
+	<div class="row form-group">		
+		<button type="button" id="btndiskSwitch" class="btn btn-danger pull-right">切换</button>
+	</div>
+	<div class="row form-group tablaChartSwitch">
+		<div class="col-md-6">
+			<div id="diskType"></div>
+		</div>
+		<div class="col-md-6">
+			<div id="diskStorage"></div>
+		</div>
+	</div>
+	<div class="row tablaChartSwitch hidden">
+		<div class="row">
+			<div class="col-md-12 form-inline">
+			  <label class="control-label">设备名称：</label>
+			  <input type="text" class="form-control" id="iptDeviceName">
+	          <label class="control-label">设备编码：</label>
+	          <input type="text" class="form-control" id="iptDeviceEncode">
+	          <label class="control-label">硬盘类型：</label>
+	          <select id="projectGroup" class="form-control mr20">
+	            <option value="-1">全部</option>
+	            <option value="0">读写驱动器</option>
+	            <option value="1">只读驱动器</option>
+	            <option value="2">备份驱动器</option>
+	            <option value="3">快照驱动器</option>
+	          </select>
+	          <label class="control-label">硬盘状态：</label>
+	          <select id="deviceGroup" class="form-control mr20">
+	            <option value="-1">全部</option>
+	            <option value="0">正常</option>
+	            <option value="1">故障</option>
+	            <option value="2">空间不足</option>
+	          </select>
+	          <button type="button" id="btnQuery" class="btn btn-success">查询</button>
+	          <button type="button" id="btnExport" class="btn btn-info">导出</button>
+            </div>
+		</div>
+		<div class="row pd10">
+			<table id="diskTable"></table>
+		</div>
+	</div>
+</div>
