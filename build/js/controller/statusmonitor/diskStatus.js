@@ -46,6 +46,12 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
                 tooltip: {
                     pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
                 },
+                legend: {
+		            align: 'center',
+		            verticalAlign: 'top',
+		            x: 0,
+		            y: 20
+		        },
                 plotOptions: {
                     pie: {
                         allowPointSelect: true,
@@ -88,6 +94,12 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
                 tooltip: {
                     pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
                 },
+                legend: {
+		            align: 'center',
+		            verticalAlign: 'top',
+		            x: 0,
+		            y: 20
+		        },
                 plotOptions: {
                     pie: {
                         allowPointSelect: true,
