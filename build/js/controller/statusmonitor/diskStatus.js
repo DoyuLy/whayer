@@ -20,16 +20,19 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
 		},
 		resizeChart:function(){
 			var _this = this;
-			var height = $("#content").height() - 160;
+			var height = $(".statusmonitor").height() - 140;
+			var width = $("#smTabContent").width()/2;
+			$("#diskError,#diskStorage").width(width);
 	        if (height > 270) {
-	            $("#diskType,#diskStorage").height(height);
+	            $("#diskError,#diskStorage").height(height);
 	        }
 		},
 		initCharts:function(){
 			var _this = this;
 			_this.resizeChart();
-			$('#diskType').highcharts({
-                colors:["#FFDA0E","#41FFF9","#6EA8FF","#5BE3FF"],               
+
+			/*$('#diskType').highcharts({
+                colors:["#FFDA0E","#41FFF9","#6EA8FF","#000"],               
                 credits:{enabled:false},
                 chart: {
                     type: 'pie',
@@ -74,8 +77,8 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
                         ['存档', 5]
                     ]
                 }]
-            });
-
+            });*/
+          
             $('#diskStorage').highcharts({
                 colors:["#D0E226","#F47827"],               
                 credits:{enabled:false},
@@ -112,6 +115,13 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
                         }
                     }
                 },
+                chart: {
+	                events:{
+	                	load:function(){                		
+				            this.redraw();  
+	                	}
+	                }
+                },
                 series: [{
                     type: 'pie',
                     name: '百分比',
@@ -120,7 +130,62 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
                         ['已占用', 31]
                     ]
                 }]
+            });            
+            
+            $('#diskError').highcharts({
+                colors:["#58E041","#D63E3E","#c5d"],            
+                credits:{enabled:false},
+                chart: {
+                    type: 'pie',
+                    options3d: {
+                        enabled: true,
+                        alpha: 45,
+                        beta: 0
+                    }
+                },
+                title: {
+                    align:"left",
+                    text: '硬盘故障'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                legend: {
+		            align: 'center',
+		            verticalAlign: 'top',
+		            x: 0,
+		            y: 20
+		        },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        depth: 35,
+                        showInLegend: true,
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        }
+                    }
+                },
+                chart:{
+                	events:{
+	                	load:function(){
+				            this.redraw();
+	                	}
+	                }
+                },
+                series: [{
+                    type: 'pie',
+                    name: '总数:',
+                    data: [
+                        ['正常',380],
+                        ['故障', 31],
+                        ['未知', 266]
+                    ]
+                }]
             });
+            
 		},
 		initTable:function(){
 			var data=[

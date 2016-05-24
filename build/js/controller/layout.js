@@ -1,16 +1,6 @@
 
 define(["domReady!", "app", "jquery", "template", "cookie"],
     function (doc, app, $, template, cookie) {
-
-    $(window).resize(function () {
-        resizeLayout();
-    });
-    function resizeLayout() {
-        var height = $(window).height() - $("#header").height();
-        $("#wrapper").height(height);
-    };
-
-
     var layout = {
         menuData: "",
         pwdTmpl: null,
@@ -22,13 +12,16 @@ define(["domReady!", "app", "jquery", "template", "cookie"],
                 _this.lockTmpl = arr[1];
 
                 $("#user_name").html(cookie.get("user_name"));
-                resizeLayout();
+                _this.resizeLayout();
                 _this.initSidebarMenu();
                 _this.attatchEvent();
             });
         },
         attatchEvent: function () {
             var _this = this;
+            $(window).resize(function () {
+                _this.resizeLayout();
+            });
             $("#menu-toggler").on("click", function () {
                 _this.collapseSidebar();
             });
@@ -47,6 +40,10 @@ define(["domReady!", "app", "jquery", "template", "cookie"],
                     layer.open({title: "提示", content: "版本未注册!", shade: true, move: false});
                 }
             });
+        },
+        resizeLayout:function(){
+            var height = $(window).height() - $("#header").height();
+            $("#wrapper").height(height);
         },
         initSidebarMenu: function () {
             var router = app.router;

@@ -14,7 +14,9 @@ body{
     background-color: #ECEFF1;
 }
 .bg_white{
-    background-color:#fff;width: 100%;height: 100%;padding: 5px;border-radius: 5px;
+    background-color:#fff;width: 100%;height: 100%;
+    padding: 5px;
+    border-radius: 5px;
 }
 .control-label{font-weight:normal;}
 /*chrome scrollbar style*/
@@ -240,6 +242,7 @@ a.menu-toggler:hover{color:#fff;}
 	margin-left:180px;
     height: 100%;
     overflow: auto;
+    overflow-x: hidden;
     padding: 10px 15px;
 } 
 /*lock screen*/
@@ -284,6 +287,7 @@ a.menu-toggler:hover{color:#fff;}
 
 #content .mr5{ margin-right:5px;}
 #content .mr20{ margin-right:20px;}
+.min300{min-height: :300px;}
 /*state module*/
 .stats {
     text-align: center;
@@ -317,9 +321,26 @@ a.menu-toggler:hover{color:#fff;}
 
 }
 
-
-/**/
-.statusmonitor{}
+/*设备状态*/
+.statusmonitor{
+    /* margin-left: 230px; */
+}
+.statusmonitor .switchBtn{
+    float: right;
+    z-index: 1;
+    position: absolute;
+    right: 10px;
+}
+.statusmonitor .left{
+       width: 230px;
+    margin-left: -230px;
+    float: left;
+    background-color: #fff;
+}
+.statusmonitor .right{
+    float: left;
+    padding: 10px;
+}
 .statusmonitor .treeborder{
     height: 100%;
     border-right: 1px solid #D0D0D0;
