@@ -2,12 +2,14 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
 	var diskStatus = {
 		init:function(){
 			var _this = this;
-			template.load(["/controller/statusmonitor/diskStatus"],function(diskStatusTmpl){
-				 $("#diskStatus").html(diskStatusTmpl);		
-				 _this.attatchEvent();	
-				 _this.initCharts();
-				 _this.initTable();
-			});
+			require(["bootstrap_table_zh"],function(){				
+				template.load(["/controller/statusmonitor/diskStatus"],function(diskStatusTmpl){
+					 $("#diskStatus").html(diskStatusTmpl);		
+					 _this.attatchEvent();	
+					 _this.initCharts();
+					 _this.initTable();
+				});
+			});			
 		},
 		attatchEvent:function(){
 			var _this = this;
@@ -15,14 +17,15 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
 		        _this.resizeChart();
 		    });
 			$("#btndiskSwitch").on("click",function(e){
-				$(".tablaChartSwitch").toggleClass("hidden");
+				$(".tableChartSwitch").toggleClass("hidden");
 			});
 		},
 		resizeChart:function(){
 			var _this = this;
 			var height = $(".statusmonitor").height() - 140;
-			var width = $("#smTabContent").width()/2;
-			$("#diskError,#diskStorage").width(width);
+			var width = $("#smTabContent").width();
+			$("#diskError,#diskStorage").width(width/2);
+			//$("#diskStatus").width(width);
 	        if (height > 270) {
 	            $("#diskError,#diskStorage").height(height);
 	        }
@@ -79,6 +82,7 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
                 }]
             });*/
           
+          	var diskData = [['未占用',0.9],['已占用', 2.0]];
             $('#diskStorage').highcharts({
                 colors:["#D0E226","#F47827"],               
                 credits:{enabled:false},
@@ -101,7 +105,10 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
 		            align: 'center',
 		            verticalAlign: 'top',
 		            x: 0,
-		            y: 20
+		            y: 20,
+		            labelFormatter:function(){
+		            	return this.name+'('+this.y+"T)";
+		            }
 		        },
                 plotOptions: {
                     pie: {
@@ -111,27 +118,26 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
                         showInLegend: true,
                         dataLabels: {
                             enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                            distance: -50,
+                            format: '{point.percentage:.1f} %'
                         }
                     }
                 },
                 chart: {
 	                events:{
 	                	load:function(){                		
-				            this.redraw();  
+				            //this.redraw();  
 	                	}
 	                }
                 },
                 series: [{
                     type: 'pie',
                     name: '百分比',
-                    data: [
-                        ['未占用',69],
-                        ['已占用', 31]
-                    ]
+                    data: diskData
                 }]
             });            
             
+            var errorData = [ ['正常',800],['故障', 486], ['未知', 286]];
             $('#diskError').highcharts({
                 colors:["#58E041","#D63E3E","#c5d"],            
                 credits:{enabled:false},
@@ -148,13 +154,16 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
                     text: '硬盘故障'
                 },
                 tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    pointFormat: '{series.name}:<b>{point.percentage:.1f}%</b>'
                 },
                 legend: {
 		            align: 'center',
 		            verticalAlign: 'top',
 		            x: 0,
-		            y: 20
+		            y: 20,
+		            labelFormatter:function(){
+		            	return this.name+'('+this.y+"个)";
+		            }
 		        },
                 plotOptions: {
                     pie: {
@@ -171,18 +180,14 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
                 chart:{
                 	events:{
 	                	load:function(){
-				            this.redraw();
+				            //this.redraw();
 	                	}
 	                }
                 },
                 series: [{
                     type: 'pie',
-                    name: '总数:',
-                    data: [
-                        ['正常',380],
-                        ['故障', 31],
-                        ['未知', 266]
-                    ]
+                    name: '总数',
+                    data: errorData
                 }]
             });
             

@@ -1,3 +1,59 @@
-<div>
-	onOffLineStatus
-</div>
+<div class="panel-body">
+	<div class="row form-group">		
+		<button type="button" id="btnonOffLineSwitch" class="btn btn-danger pull-right">切换</button>
+	</div>
+	<div class="row form-group tableonOffLineSwitch">
+		<div class="col-md-12 form-inline">
+			<label class="control-label linline mr20">设备种类：</label>
+			<label class="control-label inline mr20"><input type="checkbox">全部</label>
+			<label class="control-label inline mr20"><input type="checkbox">编码器</label>
+			<label class="control-label inline mr20"><input type="checkbox">视频设备</label>
+			<!-- <label class="control-label inline mr20"><input type="checkbox">环境量</label>
+			<label class="control-label inline mr20"><input type="checkbox">门禁系统</label>
+			<label class="control-label inline mr20"><input type="checkbox">消防系统</label> -->
+		</div>	
+		<div class="col-md-6">
+			<div id="onoineRate" class=""></div>
+		</div>
+		<div class="col-md-6">
+			<div id="onlineCount" class=""></div>
+		</div>
+	</div>
+	<div class="row tableonOffLineSwitch hidden">
+		<div class="row">
+			<div class="col-md-12 form-inline">
+			  <label class="control-label">设备名称：</label>
+			  <input type="text" class="form-control" id="iptDeviceName2">
+	          <label class="control-label">设备编码：</label>
+	          <input type="text" class="form-control" id="iptDeviceEncode2">
+	          <label class="control-label">设备种类：</label>
+	          <select id="projectGroup2" class="form-control mr20">
+	            <option value="-1">全部</option>
+	            <option value="0">编码器</option>
+	            <option value="1">视频设备</option>
+	            <option value="2">环境量</option>
+	            <option value="3">门禁系统</option>
+	            <option value="4">消防系统</option>
+	          </select>
+	          <label class="control-label">设备类型：</label>
+	          <select id="deviceGroup2" class="form-control mr20">
+	            <option value="-1">全部</option>
+	            <option value="0">DVR</option>
+	            <option value="1">IPC</option>
+	            <option value="2">红外摄像机</option>
+	          </select>
+	          <label class="control-label">在线状态：</label>
+	          <select id="onOffLineStatus" class="form-control mr20">
+	            <option value="-1">全部</option>
+	            <option value="0">在线</option>
+	            <option value="1">离线</option>
+	          </select>
+	          <button type="button" id="btnQuery2" class="btn btn-success">查询</button>
+	          <button type="button" id="btnExport2" class="btn btn-info">导出</button>
+            </div>
+		</div>
+		<div class="row pd10">
+			<table id="onOffLineTable"></table>
+		</div>
+	</div>
+</div>		
