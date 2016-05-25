@@ -1,6 +1,6 @@
 define(["template","jquery","highcharts","bootstrap_table"],function(template,$,highcharts){
 	var diskStatus = {
-		init:function(){
+		init:function(node){
 			var _this = this;
 			require(["bootstrap_table_zh"],function(){				
 				template.load(["/controller/statusmonitor/diskStatus"],function(diskStatusTmpl){

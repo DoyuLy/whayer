@@ -1,13 +1,13 @@
 define(["template","jquery","highcharts","bootstrap_table"],function(template,$,highcharts){
 	var onOffLineStatus = {
-		init:function(){
+		init:function(node){
 			var _this = this;
 			require(["bootstrap_table_zh"],function(){
 				template.load(["/controller/statusmonitor/onOffLineStatus"],function(onOffLineStatusTmpl){
 					 $("#onOffLineStatus").html(onOffLineStatusTmpl);
 					 _this.attatchEvent();	
 					 _this.initCharts();
-					 _this.initTable();				
+					 _this.initTable();			
 				});
 			});
 		},
@@ -122,7 +122,7 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
 		                enabled: false
 		            }
 		        }];
-		    
+
             $('#onlineCount').highcharts({
             	credits:{enabled:false},
 		        chart: {
