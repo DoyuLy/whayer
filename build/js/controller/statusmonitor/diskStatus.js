@@ -1,7 +1,9 @@
 define(["template","jquery","highcharts","bootstrap_table"],function(template,$,highcharts){
 	var diskStatus = {
+		treeNode:null,
 		init:function(node){
 			var _this = this;
+			_this.treeNode = node;
 			require(["bootstrap_table_zh"],function(){				
 				template.load(["/controller/statusmonitor/diskStatus"],function(diskStatusTmpl){
 					 $("#diskStatus").html(diskStatusTmpl);		
@@ -19,6 +21,9 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
 			$("#btndiskSwitch").on("click",function(e){
 				$(".tableChartSwitch").toggleClass("hidden");
 			});
+		},
+		updateNode:function(node){
+			this.treeNode = node;
 		},
 		resizeChart:function(){
 			var _this = this;
@@ -209,23 +214,6 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
 			        name:params.searchText
 				}
 			};
-			function operateFormatter(){
-		        return [
-		            '<button type="button"  class="btn btn-success btn-sm mr5 algorithmNameAdd">维修单</button>',
-		            '<button type="button"  class="btn btn-info btn-sm mr5 algorithmNameEdit">编辑</button>'
-		        ].join('');
-			};
-			var operateEvents = {
-				'click .algorithmNameAdd': function (e, value, row, index) {
-			        layer.msg("新增参数配置");
-			    },
-			    'click .algorithmNameDelete': function (e, value, row, index) {
-			        layer.msg("编辑参数配置");
-			    },
-			    'click .algorithmNameEdit': function (e, value, row, index) {
-			        layer.msg("删除参数配置");
-			    }
-			};
 			var $diskTable = $("#diskTable");
 			$diskTable.bootstrapTable({
 				cache:false, striped: true,
@@ -245,9 +233,6 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
 		        }, { field:'freeSpace',title:'剩余容量(MB)' 
 		        }, { field:'diskStatus',title:'硬盘状态' 	
 		    	}, { field:'errorTime',title:'故障时间' 
-		        }, {field:'diskSpace',title:'操作',align:"center", 
-		            formatter: operateFormatter,
-		            events: operateEvents
 		        }],
 		        data:data,
 		        onLoadSuccess:function(data){

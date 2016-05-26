@@ -1,7 +1,9 @@
 define(["template","jquery","highcharts","bootstrap_table"],function(template,$,highcharts){
 	var onOffLineStatus = {
+		treeNode:null,
 		init:function(node){
 			var _this = this;
+			_this.treeNode = node;
 			require(["bootstrap_table_zh"],function(){
 				template.load(["/controller/statusmonitor/onOffLineStatus"],function(onOffLineStatusTmpl){
 					 $("#onOffLineStatus").html(onOffLineStatusTmpl);
@@ -20,9 +22,13 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
 				$(".tableonOffLineSwitch").toggleClass("hidden");
 			});
 		},
+		updateNode:function(node){
+			this.treeNode = node;
+		},
 		resizeChart:function(){
 			var _this = this;
-			var height = $(".statusmonitor").height() - 140;
+			/*25px为设备类型高度*/
+			var height = $(".statusmonitor").height() - 140-25;
 			var width = $("#smTabContent").width();
 			//$("#onOffLineStatus").width(width);
 			$("#onoineRate,#onlineCount").width(width/2);
