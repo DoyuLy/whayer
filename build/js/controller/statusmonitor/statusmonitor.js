@@ -6,17 +6,24 @@ define(["template","jquery","layer","ztree"],function(template,$,layer,ztree){
 		childApp:{},
 		init:function(){
 			var _this = this;
+			_this.restoreDefault();
 			template.load(["/controller/statusmonitor/statusmonitor"],function(statemonitor){
 				$("#content").html(statemonitor);
 				_this.resizeLayout();
 				_this.attatchEvent();
 				_this.initTree();
-				_this.curTabInex = 0;
 				_this.initTabs(_this.curTabInex);
 			});
 		},
+		restoreDefault:function(){
+			var _this = this;
+			_this.curTabInex = 0;
+			_this.zTreeObj = null;
+			_this.curNode = null;
+			_this.childApp = {};
+		},
 		resizeLayout:function(){
-			var tabWidth = $(".statusmonitor").width()-$(".treeborder").width()-25;
+			var tabWidth = $(".statusmonitor").width()-$(".treeborder").width()-35;
 			$("#smTabContent").width(tabWidth);
 		},
 		attatchEvent:function(){
