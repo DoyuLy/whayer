@@ -73,7 +73,7 @@
                 url : url,
                 data : JSON.stringify(data),
                 dataType : 'json',
-                type: 'POST'
+                type: 'POST',
                 success : function(data){
                     successFn && successFn(data)
                 },
