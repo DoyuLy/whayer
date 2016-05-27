@@ -42,7 +42,8 @@ require.config({
         util: _COMMON_PATH + 'util',             //通用工具类
         events: _COMMON_PATH + 'events',         //自定义注册事件(observer pattern )
         wsclient: _COMMON_PATH + 'wsclient',      //web socket client
-        cookie: _COMMON_PATH + "cookie"
+        cookie: _COMMON_PATH + "cookie",
+        model: _COMMON_PATH + "model"
     },
     shim: {
         "login": {deps: ["css!../resource/style/login.css"]},

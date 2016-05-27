@@ -67,6 +67,22 @@
             });
     }
 
+    Whayer.post = function(url, data, successFn, errorFn){
+      $.ajax(
+            {
+                url : url,
+                data : JSON.stringify(data),
+                dataType : 'json',
+                type: 'POST'
+                success : function(data){
+                    successFn && successFn(data)
+                },
+                error : function(response){
+                    errorFn && errorFn(response);
+                }
+            });
+    }
+
     Whayer.json = function(url, data, successFn, errorFn)
     {
         $.ajax(

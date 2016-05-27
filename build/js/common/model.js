@@ -12,7 +12,7 @@ define([], function(){
 		this.params = params;
 		this.limit = limit ? limit : 10;
 		this.offset = offset ? offset : 0;
-		this.sort = sort : sort : null;
+		this.sort = sort ? sort : null;
 	} 
 
 	return exports;

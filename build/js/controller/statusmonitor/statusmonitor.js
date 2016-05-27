@@ -1,4 +1,5 @@
-define(["template","jquery","layer","ztree"],function(template,$,layer,ztree){
+define(["template","jquery","layer","ztree", "util", "model"],
+	function(template,$,layer,ztree, util, model){
 	var statusMmonitor = {
 		zTreeObj:null,
 		curTabInex:null,
@@ -13,7 +14,15 @@ define(["template","jquery","layer","ztree"],function(template,$,layer,ztree){
 				_this.attatchEvent();
 				_this.initTree();
 				_this.initTabs(_this.curTabInex);
+				_this.UnitTest();
 			});
+		},
+		UnitTest: function(){
+			var params = {key: "关键字", name: "测试", id: "123456789"};
+			var req = new model.reqModel(params, 10, 0, null);
+			Whayer.ajax("/devicestatus/deviceStatusList", req, "POST", function(res){
+				layer.msg(res);
+			})
 		},
 		restoreDefault:function(){
 			var _this = this;
