@@ -20,7 +20,7 @@ define(["template","jquery","layer","ztree", "util", "model"],
 		UnitTest: function(){
 			var params = {key: "关键字", name: "测试", id: "123456789"};
 			var req = new model.reqModel(params, 10, 0, null);
-			Whayer.post("/devicestatus/deviceStatusList", req, "POST", function(res){
+			Whayer.post("/devicestatus/deviceStatusList", req, function(res){
 				layer.msg(res);
 			})
 		},
