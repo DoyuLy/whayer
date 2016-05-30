@@ -6,7 +6,7 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
 			_this.treeNode = node;
 			require(["bootstrap_table_zh"],function(){
 				template.load(["/controller/statusmonitor/onOffLineStatus"],function(onOffLineStatusTmpl){
-					 $("#onOffLineStatus").html(onOffLineStatusTmpl);
+					 $("#onOffLineStatus").html(onOffLineStatusTmpl[0]);
 					 _this.attatchEvent();	
 					 _this.initCharts();
 					 _this.initTable();			
@@ -24,6 +24,7 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
 		},
 		updateNode:function(node){
 			this.treeNode = node;
+			this.initCharts();
 		},
 		resizeChart:function(){
 			var _this = this;
@@ -31,16 +32,14 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
 			var height = $(".statusmonitor").height() - 140-25;
 			var width = $("#smTabContent").width();
 			//$("#onOffLineStatus").width(width);
-			$("#onoineRate,#onlineCount").width(width/2);
-	        if (height > 270) {
-	            $("#onoineRate,#onlineCount").height(height);
-	        }
+			$("#onlineRate,#onlineCount").width(width/2);
+	        $("#onlineRate,#onlineCount").height(height);
 		},
 		initCharts:function(){
 			var _this = this;
 			_this.resizeChart();
-			var onoineRateData = [ ['在线',800],['离线', 486], ['未知', 286]];
-            $('#onoineRate').highcharts({
+			var onlineRateData = [ ['在线',800],['离线', 486], ['未知', 286]];
+            $('#onlineRate').highcharts({
                 colors:["#58E041","#D63E3E","#c5d"],            
                 credits:{enabled:false},
                 chart: {
@@ -52,17 +51,16 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
                     }
                 },
                 title: {
-                    align:"left",
-                    text: '硬盘故障'
+                    align:"center",
+                    text: '在离线率'
                 },
                 tooltip: {
                     pointFormat: '{series.name}:<b>{point.percentage:.1f}%</b>'
                 },
                 legend: {
-		            align: 'center',
-		            verticalAlign: 'top',
-		            x: 0,
-		            y: 20,
+		            layout: 'vertical',
+                    align: 'bottom',
+                    verticalAlign: 'middle',
 		            labelFormatter:function(){
 		            	return this.name+'('+this.y+"个)";
 		            }
@@ -75,6 +73,7 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
                         showInLegend: true,
                         dataLabels: {
                             enabled: true,
+                            distance: -50,
                             format: '<b>{point.name}</b>: {point.percentage:.1f} %'
                         }
                     }
@@ -89,44 +88,26 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
                 series: [{
                     type: 'pie',
                     name: '总数',
-                    data: onoineRateData
+                    data: onlineRateData
                 }]
             });
 
-            var series = [{
-		        	type:"column",
-		            name: '未知',
-		            data: [25, 59]
-		        }, {
-		        	type:"column",
-		            name: '离线',
-		            data: [30, 40]
-		        },{
-		        	type:"column",
-		            name: '在线',
-		            data: [500, 398]
-		        },{
-		        	type: 'pie',
-		        	name:"个数",
-		            data: [{
-		                name:'未知',
-		                y: 25,
-		                color: Highcharts.getOptions().colors[0]
-		            }, {
-		                name:'离线',
-		                y: 30,
-		                color: Highcharts.getOptions().colors[1]
-		            }, {
-		                name:'在线',
-		                y: 500,
-		                color: Highcharts.getOptions().colors[2]
+            var series = [{type:"column",name: '未知', data: [25, 59]}, {
+		        	type:"column",name: '离线', data: [30, 40]},{
+		        	type:"column",name: '在线',data: [500, 398]
+		        },{type: 'pie',name:"个数",
+		            data: [{ name:'未知', y: 25,color: Highcharts.getOptions().colors[0]
+		            }, {name:'离线',  y: 30,color: Highcharts.getOptions().colors[1]
+		            }, {name:'在线', y: 500,color: Highcharts.getOptions().colors[2]
 		            }],
-		            center: [50, 40],
-		            size: 100,
-		            showInLegend: false,
-		            dataLabels: {
-		                enabled: false
-		            }
+		            center: [30, 0],size: 120
+		        },{type: 'pie',name:"个数",
+		            data: [{name:'未知',y: 59,color: Highcharts.getOptions().colors[0]
+		            }, {name:'离线',y: 40,color: Highcharts.getOptions().colors[1]
+		            }, {name:'在线',y: 398,color: Highcharts.getOptions().colors[2]
+		            }],
+		            center: [300, 0],
+		            size: 120
 		        }];
 
             $('#onlineCount').highcharts({
@@ -135,29 +116,45 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
 		            type: 'column'
 		        },
 		        title: {
+		        	align:"center",
 		            text: '在离线总数'
 		        },
 		        xAxis: {
 		            /*categories: ['编码器', '视频设备', '环境量', '门禁系统', '消防系统']*/
-		            categories: ['编码器', '视频设备']
+		            categories: ['DVR', 'IPC']
 		        },
 		        yAxis: {
 		            allowDecimals: false,
 		            min: 0,
 		            title: {
-		                text: '在离线总数'
+		                text: '在离线总数(/次)'
 		            }
 		        },
 		        tooltip: {
 		            formatter: function() {
-		                return '<b>'+ this.x +'</b><br/>'+
+		                return '<b>'+ this.key +'</b><br/>'+
 		                    this.series.name +': '+ this.y;
 		            }
 		        },
 		        plotOptions: {
-		            column: {
-		            }
-		        },
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        depth: 35,
+                        showInLegend: false,
+                        dataLabels: {
+                            enabled: true,
+                            distance: -10,
+                            format: '{point.percentage:.1f} %'
+                        }
+                    },
+                    column:{
+                    	dataLabels:{
+                    		enabled: true,
+                    		format: this.y
+                    	}
+                    }
+                },
 		        series: series
 		    });
 		},

@@ -1,0 +1,69 @@
+<div class="panel-body">
+	<div class="row form-group">		
+		<button type="button" id="btnvideoQualitySwitch" class="btn btn-danger pull-right">切换</button>
+	</div>
+	<div class="row form-group tablevideoQualitySwitch">
+		<div class="col-md-12 form-group">
+			<div class="col-md-6">
+				<div id="vqLevel" class=""></div>
+			</div>
+			<div class="col-md-6">
+				<div id="vqRate" class=""></div>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="col-md-6">
+				<div id="vqDeviceRate" class=""></div>
+			</div>
+			<div class="col-md-6">
+				<div id="vqCategory" class=""></div>
+			</div>
+		</div>		
+	</div>
+	<div class="row tablevideoQualitySwitch hidden">
+		<div class="col-md-12 ">
+			<div class="form-inline form-group">
+			  <label class="control-label">设备名称：</label>
+			  <input type="text" class="form-control" id="">
+	          <label class="control-label">设备编码：</label>
+	          <input type="text" class="form-control" id="">
+	          <label class="control-label">检测项：</label>
+	          <select id="" class="form-control mr20">
+	            <option value="-1">全部</option>
+	            <option value="0">清晰度</option>
+	            <option value="1">亮度</option>
+	            <option value="2">偏色</option>
+	            <option value="3">冻结</option>
+	            <option value="4">信号丢失</option>
+	          </select>	          
+            </div>
+            <div class="form-inline">
+			  <label class="control-label">故障等级：</label>
+	          <select id="" class="form-control mr20">
+	            <option value="-1">全部</option>
+	            <option value="0">正常</option>
+	            <option value="1">不正常</option>
+	          </select>
+	          <label class="control-label">视频状态：</label>
+	          <select id="" class="form-control mr20">
+	            <option value="-1">全部</option>
+	            <option value="0">正常可检测</option>
+	            <option value="1">无法诊断</option>
+	            <option value="1">掉线</option>
+	          </select>
+	          <label class="control-label">故障个数：</label>
+	          <select id="" class="form-control mr20">
+	            <option value="-1">全部</option>
+	            <option value="0">1个</option>
+	            <option value="1">2个</option>
+	            <option value="1">3个及以上</option>
+	          </select>
+	          <button type="button" id="btnQuery4" class="btn btn-success">查询</button>
+	          <button type="button" id="btnExport4" class="btn btn-info">导出</button>
+	        </div> 
+		</div>
+		<div class="col-md-12  pd10">
+			<table id="videoQualityTable"></table>
+		</div>
+	</div>
+</div>		

@@ -318,7 +318,7 @@ a.menu-toggler:hover{color:#fff;}
 } 
 /*视频质量诊断*/
 .vqd{
-
+    padding-left: 10px;
 }
 
 /*设备状态*/

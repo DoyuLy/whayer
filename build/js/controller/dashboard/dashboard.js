@@ -4,9 +4,9 @@ define(["domReady!", "app", "jquery", "highcharts", "template"], function (doc, 
     });
     function resizeChart() {
         var height = ($("#content").height() - 20) / 2;
-        if (height > 270) {
+        //if (height > 270) {
             $("#container1,#container2,#container3,#container4").height(height);
-        }
+        //}
     }
 
     var dashboard = {

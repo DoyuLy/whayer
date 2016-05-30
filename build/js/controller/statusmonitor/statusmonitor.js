@@ -55,8 +55,8 @@ define(["template","jquery","layer","ztree", "util", "model"],
 			var zTreeNodes = [
 				{id:1, pId:0, name: "四川省电力公司中心平台"},
 				{id:2, pId:1, name: "成都市"},
-				{id:3, pId:2, name: "华三平台"},
-				{id:6, pId:1, name: "武侯变220KV变电站"}
+				{id:3, pId:2, name: "华三平台",isParent:true},
+				{id:6, pId:1, name: "武侯变220KV变电站",isParent:true}
 			];
 			var setting = {	data: {
 			        simpleData: {
@@ -104,16 +104,16 @@ define(["template","jquery","layer","ztree", "util", "model"],
 					});
 				}				
 			}else if(index==2){
-				/*var child_videoQuality = _this.childApp["videoQuality"];
+				var child_videoQuality = _this.childApp["videoQuality"];
 				if(child_videoQuality){
 					child_videoQuality.updateNode(_this.curNode);
 				}else{
 					var videoQuality1 = "./controller/statusmonitor/videoQuality";
 					require([videoQuality1],function(videoQuality){
-						_this.childApp["videoQuality"] = child_videoQuality;
+						_this.childApp["videoQuality"] = videoQuality;
 						videoQuality.init(_this.curNode);
 					});
-				}*/
+				}
 				
 			}else{
 

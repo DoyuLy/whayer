@@ -15,6 +15,7 @@ require.config({
         bootstrap_table_zh: _PLUGIN_PATH + 'bootstrap-table/locale/bootstrap-table-zh-CN.min',
         /*bootstrap_editable: _PLUGIN_PATH + 'bootstrap-table/extensions/editable/bootstrap-editable.min',*/
         //bootstrap_combobox: _PLUGIN_PATH + 'bootstrap/bootstrap-combobox/bootstrap-combobox',
+        bootstrap_slider:_PLUGIN_PATH+"bootstrap-slider/bootstrap-slider.min",
         layer: _PLUGIN_PATH + "layer/layer",
         ztree: _PLUGIN_PATH + 'ztree/js/jquery.ztree.all.min',
         handlebars: _PLUGIN_PATH + 'handlebars/handlebars',
@@ -56,6 +57,9 @@ require.config({
             exports:"bootstrap"
         },
         "bootstrap_table_zh":{exports:"bootstrap_table_zh"},
+        bootstrap_slider:{
+            deps:["css!../resource/plugins/bootstrap-slider/css/bootstrap-slider.min.css"]
+        },
         "layer": ["jquery"],
         "ztree": ["jquery","css!../resource/plugins/ztree/css/metroStyle/metroStyle.css"],
         "handlebars": {
@@ -85,7 +89,15 @@ require.config({
 requirejs.onError = function (error) {
     layer.msg(error.message);
 };
-require(["domReady!", "app", "text", "template", "bootstrap", "util", "handlebars"], function (doc, app) {
+/*require(["domReady!", "app", "text", "template", "bootstrap", "util", "handlebars"], function (doc, app) {
         app.init();
+    }
+);*/
+require(["domReady!", "layer"], function (doc, layer) {
+        //layer.load(0,{shade: [0.8, '#34495E']});
+        require(["app","text", "template", "bootstrap", "util", "handlebars"], function (app) {
+                app.init();
+            }
+        )
     }
 );

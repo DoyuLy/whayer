@@ -6,7 +6,7 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
 			_this.treeNode = node;
 			require(["bootstrap_table_zh"],function(){				
 				template.load(["/controller/statusmonitor/diskStatus"],function(diskStatusTmpl){
-					 $("#diskStatus").html(diskStatusTmpl);		
+					 $("#diskStatus").html(diskStatusTmpl[0]);		
 					 _this.attatchEvent();	
 					 _this.initCharts();
 					 _this.initTable();
@@ -24,69 +24,20 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
 		},
 		updateNode:function(node){
 			this.treeNode = node;
+			this.initCharts();
 		},
 		resizeChart:function(){
 			var _this = this;
-			var height = $(".statusmonitor").height() - 140;
+			var height = $(".statusmonitor").height() - 140-25;
 			var width = $("#smTabContent").width();
 			$("#diskError,#diskStorage").width(width/2);
 			//$("#diskStatus").width(width);
-	        if (height > 270) {
-	            $("#diskError,#diskStorage").height(height);
-	        }
+	        $("#diskError,#diskStorage").height(height);
 		},
 		initCharts:function(){
 			var _this = this;
 			_this.resizeChart();
 
-			/*$('#diskType').highcharts({
-                colors:["#FFDA0E","#41FFF9","#6EA8FF","#000"],               
-                credits:{enabled:false},
-                chart: {
-                    type: 'pie',
-                    options3d: {
-                        enabled: true,
-                        alpha: 45,
-                        beta: 0
-                    }
-                },
-                title: {
-                    align:"left",
-                    text: '硬盘类型'
-                },
-                tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-                },
-                legend: {
-		            align: 'center',
-		            verticalAlign: 'top',
-		            x: 0,
-		            y: 20
-		        },
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        depth: 35,
-                        showInLegend: true,
-                        dataLabels: {
-                            enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                        }
-                    }
-                },
-                series: [{
-                    type: 'pie',
-                    name: '百分比',
-                    data: [
-                        ['默认',51],
-                        ['冗余', 31],
-                        ['冗余', 13],
-                        ['存档', 5]
-                    ]
-                }]
-            });*/
-          
           	var diskData = [['未占用',0.9],['已占用', 2.0]];
             $('#diskStorage').highcharts({
                 colors:["#D0E226","#F47827"],               
@@ -100,17 +51,16 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
                     }
                 },
                 title: {
-                    align:"left",
-                    text: '硬盘使用空间'
+                    align:"center",
+                    text: '硬盘使用空间',
+                    style: {color:'#d9534f',fontWeight:'bold'}
                 },
                 tooltip: {
                     pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
                 },
                 legend: {
 		            align: 'center',
-		            verticalAlign: 'top',
-		            x: 0,
-		            y: 20,
+		            verticalAlign: 'bottom',
 		            labelFormatter:function(){
 		            	return this.name+'('+this.y+"T)";
 		            }
@@ -124,7 +74,7 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
                         dataLabels: {
                             enabled: true,
                             distance: -50,
-                            format: '{point.percentage:.1f} %'
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
                         }
                     }
                 },
@@ -155,17 +105,16 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
                     }
                 },
                 title: {
-                    align:"left",
-                    text: '硬盘故障'
+                    align:"center",
+                    text: '硬盘故障',
+                    style: {color:'#d9534f',fontWeight:'bold'}
                 },
                 tooltip: {
                     pointFormat: '{series.name}:<b>{point.percentage:.1f}%</b>'
                 },
                 legend: {
 		            align: 'center',
-		            verticalAlign: 'top',
-		            x: 0,
-		            y: 20,
+		            verticalAlign: 'bottom',
 		            labelFormatter:function(){
 		            	return this.name+'('+this.y+"个)";
 		            }
@@ -178,6 +127,7 @@ define(["template","jquery","highcharts","bootstrap_table"],function(template,$,
                         showInLegend: true,
                         dataLabels: {
                             enabled: true,
+                            distance: -50,
                             format: '<b>{point.name}</b>: {point.percentage:.1f} %'
                         }
                     }
