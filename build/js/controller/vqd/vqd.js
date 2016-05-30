@@ -91,20 +91,39 @@ define(["template","jquery","layer","bootstrap_table","bootstrap_slider"],functi
 		        ].join('');*/
 
 		        return [
-		            '<button type="button"  class="btn btn-success btn-sm mr5 algorithmNameAdd">新增</button>',
 		            '<button type="button"  class="btn btn-info btn-sm mr5 algorithmNameEdit">编辑</button>',
 		            '<button type="button"  class="btn btn-danger btn-sm mr5 algorithmNameDelete">删除</button>',
 		        ].join('');
 			};
 			var operateEvents = {
-				'click .algorithmNameAdd': function (e, value, row, index) {
-			        layer.msg("新增参数配置");
+			    'click .algorithmConfigEdit': function (e, value, row, index) {
+			        //layer.msg("编辑参数配置");
+			        template.load(["/modal/addDiagnoseConfig"],function(addDiagnoseConfig_tmpl){
+						var content = addDiagnoseConfig_tmpl[0];
+						layer.open({
+							title:"编辑参数配置",
+							content:content,
+							area:"500px",
+							btn:["保存","取消"],
+							success:function(){
+								var slider = new Slider("#sensitivity1", {value: [18,45],range: true,tooltip:"always" });
+							},
+							yes:function(){
+								layer.msg("保存参数配置");
+							}
+						});
+					});
 			    },
-			    'click .algorithmNameDelete': function (e, value, row, index) {
-			        layer.msg("编辑参数配置");
-			    },
-			    'click .algorithmNameEdit': function (e, value, row, index) {
-			        layer.msg("删除参数配置");
+			    'click .algorithmConfigDelete': function (e, value, row, index) {
+			        //layer.msg("删除参数配置");
+			        layer.open({
+			        	title:"提示",
+			        	content:"是否删除该配置项?",
+			        	btn:["确定","取消"],
+			        	yes:function(){
+			        		layer.msg("删除参数配置");
+			        	}
+			        });
 			    }
 			};
 			function operateFormatter2(){
