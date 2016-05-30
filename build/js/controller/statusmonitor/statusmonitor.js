@@ -14,11 +14,11 @@ define(["template","jquery","layer","ztree", "util", "model"],
 				_this.attatchEvent();
 				_this.initTree();
 				_this.initTabs(_this.curTabInex);
-				_this.UnitTest();
+				//_this.UnitTest();
 			});
 		},
 		UnitTest: function(){
-			var params = {key: "关键字", name: "测试", id: "123456789"};
+			var params = {devname: "1", devCode: "1", groupId: "123456789", diskType: 1, diskStatus: 0, startIndex: 0, count: 10};
 			var req = new model.reqModel(params, 10, 0, null);
 			Whayer.post("/devicestatus/deviceStatusList", req, function(res){
 				layer.msg(res);

@@ -64,7 +64,7 @@
                     errorFn&&errorFn(response);
                 },
                 timeout : 10000
-            });
+        });
     }
 
     Whayer.post = function(url, data, successFn, errorFn){

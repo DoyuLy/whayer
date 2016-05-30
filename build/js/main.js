@@ -21,6 +21,7 @@ require.config({
         handlebars: _PLUGIN_PATH + 'handlebars/handlebars',
         underscore: _PLUGIN_PATH + 'underscore/underscore-min',
         highcharts: _PLUGIN_PATH + "Highcharts/highcharts",
+        highcharts_3d: _PLUGIN_PATH + "Highcharts/highcharts-3d",
         highchartsTheme: _PLUGIN_PATH + "Highcharts/themes/dark-unica",
         NProgress: _PLUGIN_PATH + "nprogress/nprogress",
 
@@ -44,11 +45,14 @@ require.config({
         events: _COMMON_PATH + 'events',         //自定义注册事件(observer pattern )
         wsclient: _COMMON_PATH + 'wsclient',      //web socket client
         cookie: _COMMON_PATH + "cookie",
-        model: _COMMON_PATH + "model"
+        model: _COMMON_PATH + "model",
+        highcharts_extend: _COMMON_PATH + "highcharts-extend"
     },
     shim: {
         "login": {deps: ["css!../resource/style/login.css"]},
         "layout": {deps: ["css!../resource/style/main.css"]},
+        "highcharts": {deps: ["jquery"]},
+        "highcharts_3d": {deps: ["jquery", "highcharts"]},
         "bootstrap_table":{
             deps:["bootstrap","css!../resource/plugins/bootstrap-table/bootstrap-table.min.css"]
         },
